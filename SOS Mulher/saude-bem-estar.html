@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saúde e Bem-Estar - SOS Mulher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body data-pagina="saude">
+    <!-- Cabeçalho compartilhado: logo, uma navegação principal e botão de celular. -->
+    <header class="cabecalho-site">
+      <div class="conteudo-limite area-navegacao">
+        <a class="marca" href="index.html" aria-label="SOS Mulher - Início">
+          <img class="marca-logo" src="src/img/logo-sos-mulher.svg" alt="" aria-hidden="true" />
+          <span>SOS Mulher</span>
+        </a>
+
+        <nav class="navegacao-principal" id="menu-principal" aria-label="Navegação principal">
+          <a href="index.html">Início</a>
+          <span class="separador-navegacao" aria-hidden="true"></span>
+          <a href="saude-bem-estar.html">Saúde e Bem-Estar</a>
+          <details class="menu-direitos">
+            <summary>
+              Seus Direitos
+              <span class="icone icone-pequeno" data-icone="seta-baixo"></span>
+            </summary>
+            <div class="painel-menu">
+              <a href="lei-maria-da-penha.html">Lei Maria da Penha</a>
+              <a href="perguntas-frequentes.html">Perguntas Frequentes</a>
+            </div>
+          </details>
+        </nav>
+
+        <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+          <span class="icone" data-icone="menu"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Barra de retorno para voltar à página inicial. -->
+      <div class="barra-voltar">
+        <div class="conteudo-limite">
+          <a class="link-voltar" href="index.html">
+            <span class="icone icone-pequeno" data-icone="seta-voltar"></span>
+            Voltar para página inicial
+          </a>
+        </div>
+      </div>
+
+      <!-- Conteúdo de saúde: cards, aplicativos, alertas e dicas de bem-estar. -->
+      <section class="secao fundo-branco">
+        <div class="conteudo-limite">
+          <div class="cabecalho-secao">
+            <h2>Saúde e Bem-Estar</h2>
+            <p>Informações essenciais para cuidar da sua saúde física, mental e emocional</p>
+          </div>
+
+          <div class="grade-saude">
+            <article class="cartao-saude">
+              <header>
+                <span class="icone-redondo"><span class="icone" data-icone="atividade"></span></span>
+                <h3>Autoexame de Mama</h3>
+              </header>
+              <ul>
+                <li>Realize mensalmente, de 3 a 5 dias após a menstruação</li>
+                <li>Em frente ao espelho, observe alterações na forma, tamanho e pele</li>
+                <li>Apalpe toda a mama em movimentos circulares</li>
+                <li>Procure um médico ao notar qualquer alteração</li>
+              </ul>
+            </article>
+
+            <article class="cartao-saude">
+              <header>
+                <span class="icone-redondo"><span class="icone" data-icone="cerebro"></span></span>
+                <h3>Saúde Mental</h3>
+              </header>
+              <ul>
+                <li>Reconheça seus sentimentos - não há vergonha em pedir ajuda</li>
+                <li>Pratique técnicas de respiração e relaxamento</li>
+                <li>Mantenha uma rede de apoio de confiança</li>
+                <li>Busque acompanhamento psicológico quando necessário</li>
+              </ul>
+            </article>
+
+            <article class="cartao-saude">
+              <header>
+                <span class="icone-redondo"><span class="icone" data-icone="coracao"></span></span>
+                <h3>Exames Preventivos</h3>
+              </header>
+              <ul>
+                <li>Papanicolau: anualmente ou conforme orientação médica</li>
+                <li>Mamografia: a partir dos 40 anos ou antes, se houver histórico familiar</li>
+                <li>Exames de sangue: pelo menos 1 vez ao ano</li>
+                <li>Vacinação: HPV, tétano e outras conforme calendário</li>
+              </ul>
+            </article>
+          </div>
+
+          <section class="painel-aplicativos">
+            <header>
+              <span class="icone" data-icone="celular"></span>
+              <h3>Aplicativos e Recursos Úteis</h3>
+            </header>
+            <div class="grade-aplicativos">
+              <article class="cartao-aplicativo">
+                <h4>Botão do Pânico</h4>
+                <p>Aplicativos que enviam sua localização para contatos de emergência.</p>
+                <small>Mete a Colher, bSafe, Cittadin</small>
+              </article>
+              <article class="cartao-aplicativo">
+                <h4>190 - Polícia Militar</h4>
+                <p>Ligação direta em situações de emergência.</p>
+                <small>Funciona em todo o Brasil</small>
+              </article>
+              <article class="cartao-aplicativo">
+                <h4>180 - Central de Atendimento à Mulher</h4>
+                <p>Denúncias e orientações 24 horas por dia.</p>
+                <small>Gratuito e confidencial</small>
+              </article>
+              <article class="cartao-aplicativo">
+                <h4>Aplicativos de Monitoramento de Ciclo</h4>
+                <p>Acompanhe sua saúde reprodutiva.</p>
+                <small>Clue, Flo, Meu Calendário</small>
+              </article>
+            </div>
+          </section>
+
+          <div class="grade-alertas">
+            <article class="cartao-alerta aviso">
+              <header>
+                <span class="icone" data-icone="alerta-triangulo"></span>
+                <h3>Sinais de Alerta - Violência</h3>
+              </header>
+              <ul>
+                <li>Isolamento de amigos e familiares</li>
+                <li>Controle excessivo sobre roupas, dinheiro ou atividades</li>
+                <li>Agressões verbais, humilhações ou ameaças</li>
+                <li>Qualquer tipo de violência física</li>
+                <li>Controle do celular, redes sociais ou localização</li>
+              </ul>
+            </article>
+
+            <article class="cartao-alerta perigo">
+              <header>
+                <span class="icone" data-icone="alerta-triangulo"></span>
+                <h3>Quando Buscar Ajuda Imediata</h3>
+              </header>
+              <ul>
+                <li>Se você ou seus filhos estão em perigo físico</li>
+                <li>Ameaças de morte ou violência grave</li>
+                <li>Após sofrer qualquer tipo de agressão</li>
+                <li>Se o agressor possui armas</li>
+                <li>Descumprimento de medidas protetivas</li>
+              </ul>
+            </article>
+          </div>
+
+          <section class="painel-dicas">
+            <header>
+              <span class="icone" data-icone="escudo-confirmado"></span>
+              <h3>Dicas de Bem-Estar Diário</h3>
+            </header>
+            <div class="grade-dicas">
+              <article class="cartao-dica"><span class="icone" data-icone="coracao"></span><p>Durma pelo menos 7-8 horas por noite</p></article>
+              <article class="cartao-dica"><span class="icone" data-icone="coracao"></span><p>Mantenha-se hidratada - beba água regularmente</p></article>
+              <article class="cartao-dica"><span class="icone" data-icone="coracao"></span><p>Pratique atividade física que você goste</p></article>
+              <article class="cartao-dica"><span class="icone" data-icone="coracao"></span><p>Alimente-se de forma equilibrada</p></article>
+              <article class="cartao-dica"><span class="icone" data-icone="coracao"></span><p>Reserve tempo para você mesma</p></article>
+              <article class="cartao-dica"><span class="icone" data-icone="coracao"></span><p>Cultive relações saudáveis</p></article>
+              <article class="cartao-dica"><span class="icone" data-icone="coracao"></span><p>Estabeleça limites - saiba dizer não</p></article>
+              <article class="cartao-dica"><span class="icone" data-icone="coracao"></span><p>Busque momentos de lazer e relaxamento</p></article>
+            </div>
+          </section>
+
+          <p class="nota-legal">
+            * As informações aqui apresentadas têm caráter educativo e não substituem
+            consulta médica profissional. Sempre procure um médico para diagnóstico
+            e tratamento adequado.
+          </p>
+        </div>
+      </section>
+
+      <!-- Área reservada para conteúdos futuros. -->
+      <section class="mais-conteudo fundo-branco">
+        <div class="conteudo-limite">
+          <div class="painel-aviso">
+            <h3>Mais conteúdo em breve</h3>
+            <p>
+              Esta página será expandida com mais tópicos sobre saúde física, mental,
+              emocional, nutrição, exercícios, meditação e muito mais.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé com contatos, dados institucionais e endereços. -->
+    <footer class="rodape-site">
+      <div class="conteudo-limite grade-rodape">
+        <div>
+          <a class="marca marca-rodape" href="index.html">
+            <img class="marca-logo pequeno" src="src/img/logo-sos-mulher.svg" alt="" aria-hidden="true" />
+            <span>SOS Mulher</span>
+          </a>
+          <p>Desde 1983 acolhendo e fortalecendo mulheres em situação de vulnerabilidade em São José dos Campos.</p>
+          <p>Atendimento <strong>gratuito e sigiloso</strong></p>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <a href="https://wa.me/5512992209020" target="_blank" rel="noopener noreferrer"><span class="icone icone-pequeno" data-icone="telefone"></span>(12) 99220-9020</a>
+          <a href="mailto:sosmulher.oficialsjc@gmail.com"><span class="icone icone-pequeno" data-icone="email"></span>sosmulher.oficialsjc@gmail.com</a>
+          <a href="https://instagram.com/sosmulher.oficialsjc" target="_blank" rel="noopener noreferrer"><span class="icone icone-pequeno" data-icone="instagram"></span>@sosmulher.oficialsjc</a>
+        </div>
+        <div>
+          <h4>Institucional</h4>
+          <p><strong>CNPJ</strong><br />53.320.909/0001-93</p>
+          <p><strong>Diretoria</strong><br />Beth Montezano - Presidente<br />Ana Cristina - Vice-presidenta</p>
+        </div>
+        <div>
+          <h4>Endereços</h4>
+          <p><strong>Sede SOS Mulher</strong><br />Rua José Cobra, nº 1300<br />Sociedade Amigos do Bairro 31 de Março (Satomar)<br />São José dos Campos - SP</p>
+          <p><strong>DDM - Delegacia da Mulher</strong><br />Av. Comendador Vicente de Paulo Penido, 234<br />Parque Res. Aquarius<br />São José dos Campos - SP<br />Tel: (12) 3941-4140<br /><span class="status-verde">Atendimento 24 horas</span></p>
+        </div>
+      </div>
+      <div class="rodape-final">© <span data-year></span> SOS Mulher. Todos os direitos reservados.</div>
+    </footer>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
+
+
