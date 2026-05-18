@@ -175,6 +175,7 @@ main {
 }
 
 .area-navegacao {
+  width: min(100% - 64px, 1320px);
   min-height: var(--altura-cabecalho);
   display: flex;
   align-items: center;
@@ -196,7 +197,9 @@ main {
 .navegacao-principal {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 22px;
+  margin-left: auto;
   color: #374151;
   font-size: 16px;
 }
@@ -731,6 +734,157 @@ main {
   font-weight: 500;
 }
 
+.bloco-rede {
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-pequena);
+}
+
+.bloco-rede h3 {
+  margin: 0 0 18px;
+  color: var(--cor-principal);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.bloco-rede p {
+  margin: 0;
+  color: var(--texto-medio);
+}
+
+.bloco-rede a {
+  color: var(--cor-principal);
+  font-weight: 600;
+}
+
+.destaque-emergencia {
+  max-width: 1040px;
+  margin: 0 auto 28px;
+  border-color: var(--borda-forte);
+}
+
+.cabecalho-bloco-rede {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.cabecalho-bloco-rede h3 {
+  margin-bottom: 4px;
+}
+
+.cabecalho-bloco-rede p {
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.selo-urgente,
+.etiqueta-servico {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  min-height: 28px;
+  padding: 5px 10px;
+  color: #ffffff;
+  background: var(--cor-principal);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.grade-telefones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cartao-telefone {
+  display: grid;
+  gap: 4px;
+  padding: 16px;
+  color: var(--texto);
+  background: var(--rosa-suave);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+}
+
+.cartao-telefone:hover {
+  color: var(--texto);
+  background: var(--rosa-claro);
+}
+
+.cartao-telefone strong {
+  color: var(--cor-principal);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.cartao-telefone span {
+  color: var(--texto-medio);
+  font-size: 14px;
+}
+
+.grupos-rede {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.lista-servicos {
+  display: grid;
+  gap: 18px;
+}
+
+.item-servico {
+  padding-top: 18px;
+  border-top: 1px solid var(--borda);
+}
+
+.item-servico:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.item-servico h4 {
+  margin: 0 0 8px;
+  color: var(--texto);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.item-servico .etiqueta-servico {
+  margin-bottom: 10px;
+  color: var(--cor-principal);
+  background: var(--rosa-claro);
+}
+
+.item-servico p + p {
+  margin-top: 6px;
+}
+
+.painel-orientacao {
+  max-width: 1040px;
+  margin: 56px auto 0;
+}
+
+.grade-orientacoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+}
+
+.grade-orientacoes p {
+  margin: 0;
+}
+
 .painel-aviso {
   max-width: 896px;
   margin: 0 auto;
@@ -739,6 +893,11 @@ main {
   background: var(--rosa-suave);
   border-left: 4px solid var(--cor-principal);
   border-radius: 4px;
+}
+
+.painel-aviso.painel-orientacao {
+  max-width: 1040px;
+  margin: 36px auto 0;
 }
 
 .painel-aviso h4 {
@@ -1305,27 +1464,6 @@ main {
   resize: vertical;
 }
 
-.painel-emergencia {
-  max-width: 768px;
-  margin: 48px auto 0;
-  padding: 24px;
-  color: #b91c1c;
-  background: #fef2f2;
-  border-left: 4px solid #ef4444;
-  border-radius: 4px;
-}
-
-.painel-emergencia h4 {
-  margin: 0 0 8px;
-  color: #991b1b;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.painel-emergencia p {
-  margin: 8px 0 0;
-}
-
 /* Perguntas frequentes: botão principal, lista de perguntas e respostas recolhíveis. */
 .botao-secao-perguntas {
   width: min(100%, 896px);
@@ -1803,7 +1941,6 @@ main {
 }
 
 .grade-saude,
-.grade-aplicativos,
 .grade-dicas {
   display: grid;
   gap: 32px;
@@ -1823,7 +1960,6 @@ main {
 }
 
 .cartao-saude header,
-.painel-aplicativos header,
 .painel-dicas header {
   display: flex;
   align-items: center;
@@ -1832,14 +1968,12 @@ main {
 }
 
 .cartao-saude h3,
-.painel-aplicativos h3,
 .painel-dicas h3 {
   margin: 0;
   font-size: 24px;
   font-weight: 500;
 }
 
-.painel-aplicativos,
 .painel-dicas {
   max-width: 1120px;
   margin: 0 auto 64px;
@@ -1849,32 +1983,59 @@ main {
   box-shadow: var(--sombra-media);
 }
 
-.grade-aplicativos {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.painel-pratico-saude {
+  max-width: 1120px;
+  margin: 0 auto 64px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-media);
 }
 
-.cartao-aplicativo {
-  padding: 16px;
+.painel-pratico-saude header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: var(--cor-principal);
+}
+
+.painel-pratico-saude h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.grade-pratica-saude {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cartao-pratico-saude {
+  padding: 18px;
   background: var(--fundo-suave);
   border-left: 4px solid var(--cor-principal);
   border-radius: 0 var(--raio) var(--raio) 0;
 }
 
-.cartao-aplicativo h4 {
+.cartao-pratico-saude h4 {
   margin: 0 0 8px;
-  color: var(--cor-principal);
-  font-weight: 500;
+  color: var(--texto);
+  font-size: 17px;
+  font-weight: 600;
 }
 
-.cartao-aplicativo p {
-  margin: 0 0 8px;
+.cartao-pratico-saude p {
+  margin: 0 0 10px;
   color: #374151;
   font-size: 14px;
 }
 
-.cartao-aplicativo small {
+.cartao-pratico-saude small {
   color: var(--texto-suave);
-  font-style: italic;
+  font-size: 13px;
 }
 
 .grade-alertas {
@@ -1914,6 +2075,12 @@ main {
   margin: 0;
   font-size: 20px;
   font-weight: 500;
+}
+
+.texto-alerta {
+  margin: 0 0 14px;
+  color: inherit;
+  font-weight: 600;
 }
 
 .painel-dicas {
@@ -1981,9 +2148,13 @@ main {
 
 .grade-rodape {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px;
+  grid-template-columns: 1.15fr 1fr 1fr 1.25fr;
+  gap: 28px;
   padding: 48px 0 32px;
+}
+
+.coluna-rodape {
+  min-width: 0;
 }
 
 .marca-rodape {
@@ -1993,8 +2164,9 @@ main {
 
 .rodape-site h4 {
   margin: 0 0 16px;
+  color: #ffffff;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .rodape-site p,
@@ -2011,12 +2183,57 @@ main {
   gap: 8px;
 }
 
+.links-rodape {
+  display: grid;
+  gap: 10px;
+}
+
+.links-rodape a {
+  margin: 0;
+}
+
 .rodape-site strong {
   color: #ffffff;
 }
 
 .rodape-site .status-verde {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: #4ade80;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rodape-site .status-verde::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  background: #4ade80;
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.14);
+  animation: pulso-status-verde 1.6s ease-in-out infinite;
+}
+
+@keyframes pulso-status-verde {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.14);
+    opacity: 1;
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(74, 222, 128, 0.04);
+    opacity: 0.72;
+  }
+}
+
+.selo-rodape {
+  display: block;
+  color: #d1d5db;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .marca-rodape span,
@@ -2055,6 +2272,8 @@ main {
     right: 0;
     left: 0;
     display: none;
+    justify-content: stretch;
+    margin-left: 0;
     max-height: calc(100vh - var(--altura-cabecalho));
     overflow-y: auto;
     padding: 16px 24px 24px;
@@ -2116,6 +2335,9 @@ main {
   }
 
   .grade-apoio,
+  .grade-telefones,
+  .grupos-rede,
+  .grade-orientacoes,
   .grade-doacoes,
   .grade-contato,
   .lista-diretoria,
@@ -2124,7 +2346,7 @@ main {
   .grade-importante,
   .grade-emergencia,
   .grade-saude,
-  .grade-aplicativos,
+  .grade-pratica-saude,
   .grade-alertas,
   .grade-dicas,
   .grade-rodape {
@@ -2205,7 +2427,6 @@ main {
   .painel-artigo,
   .painel-direitos,
   .cartao-violencia,
-  .painel-aplicativos,
   .painel-dicas {
     padding: 24px;
   }
