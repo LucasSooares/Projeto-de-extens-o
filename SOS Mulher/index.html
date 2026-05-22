@@ -22,10 +22,13 @@
     <!-- Cabeçalho fixo: logo, uma navegação principal e botão para abrir o menu no celular. -->
     <header class="cabecalho-site">
       <div class="conteudo-limite area-navegacao">
-        <a class="marca" href="index.html" aria-label="SOS Mulher - Início">
+        <a class="marca" href="index.html" aria-label="SOS Mulher - Um toque muda a vida - Início">
           <!-- Ícone/logo do início: para trocar, substitua o arquivo em src/img/logo-sos-mulher.svg. -->
-          <img class="marca-logo" src="src/img/logo-sos-mulher.svg" alt="" aria-hidden="true" />
-          <span>SOS Mulher</span>
+          <img class="marca-logo" src="src/img/logo.png" alt="" aria-hidden="true" />
+          <span class="marca-textos">
+            <span class="marca-titulo">SOS Mulher</span>
+            <small class="marca-slogan">Um toque muda a vida</small>
+          </span>
         </a>
 
         <!-- Esta é a única navegação principal. No CSS ela fica horizontal no computador e recolhida no celular. -->
@@ -64,10 +67,14 @@
         <div class="fundo-inicial" aria-hidden="true"></div>
         <div class="conteudo-limite grade-inicial">
           <div class="texto-inicial">
+            <p class="selo-inicial">
+              <span class="icone" data-icone="escudo-confirmado"></span>
+              Acolhimento para mulheres em situação de violência
+            </p>
             <h1>Você não está sozinha</h1>
             <p>
               O SOS Mulher oferece acolhimento, orientação jurídica, apoio psicológico
-              e capacitação profissional para mulheres em situação de vulnerabilidade.
+              e capacitação profissional para mulheres em situação de violência ou vulnerabilidade.
             </p>
 
             <div class="acoes-iniciais">
@@ -75,9 +82,9 @@
                 <span class="icone" data-icone="telefone"></span>
                 Preciso de Ajuda
               </a>
-              <a class="botao botao-contorno-claro" href="#doacoes">
-                <span class="icone" data-icone="coracao"></span>
-                Quero Apoiar
+              <a class="botao botao-contorno-claro" href="#rede-apoio">
+                <span class="icone" data-icone="pessoas"></span>
+                Rede de Apoio
               </a>
             </div>
 
@@ -101,7 +108,7 @@
             <!-- Imagem do hero: para usar uma foto, salve em src/img/imagem-inicial.jpg e troque o src abaixo. -->
             <img
               class="imagem-inicial"
-              src="src/img/"
+              src="src/img/logo-principal.png"
               alt="Imagem institucional de acolhimento do SOS Mulher"
             />
           </div>
@@ -899,7 +906,7 @@
         <div class="coluna-rodape marca-coluna-rodape">
           <a class="marca marca-rodape" href="index.html">
             <!-- Ícone/logo do rodapé: usa o mesmo arquivo do cabeçalho. -->
-            <img class="marca-logo pequeno" src="src/img/logo-sos-mulher.svg" alt="" aria-hidden="true" />
+            <img class="marca-logo pequeno" src="src/img/logo.png" alt="" aria-hidden="true" />
             <span>SOS Mulher</span>
           </a>
           <p>Desde 1983 acolhendo e fortalecendo mulheres em situação de vulnerabilidade em São José dos Campos.</p>

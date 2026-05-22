@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Logo SOS Mulher">
-  <circle cx="100" cy="100" r="95" fill="#d81b73"/>
-  <path d="M100 150C100 150 60 125 60 95C60 75 70 65 85 65C92 65 98 68 100 75C102 68 108 65 115 65C130 65 140 75 140 95C140 125 100 150 100 150Z" fill="#fff"/>
-  <path d="M55 110C55 110 50 105 45 110C40 115 42 125 50 130C55 133 60 130 60 125" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/>
-  <path d="M145 110C145 110 150 105 155 110C160 115 158 125 150 130C145 133 140 130 140 125" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/>
-  <path d="M40 165C40 165 100 170 160 165" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-</svg>
