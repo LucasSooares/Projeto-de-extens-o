@@ -305,7 +305,7 @@ function configurarFormulariosDeContato() {
   });
 }
 
-// Esconde fotos que ainda não existem e mostra as iniciais no lugar.
+// Exibe a foto de cada integrante quando o arquivo correspondente estiver disponível.
 function configurarFotosDaDiretoria() {
   document.querySelectorAll("[data-foto-diretoria]").forEach((foto) => {
     const caminhoDaFoto = foto.dataset.src;

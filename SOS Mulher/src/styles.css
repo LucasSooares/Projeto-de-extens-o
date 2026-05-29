@@ -610,6 +610,17 @@ main {
   margin: 0 0 24px;
 }
 
+.midia-quem-somos {
+  margin: 36px 0 8px;
+}
+
+.imagem-quem-somos {
+  width: min(100%, 700px);
+  max-height: 420px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 .bloco-dividido {
   margin-top: 48px;
   padding-bottom: 48px;
@@ -710,34 +721,14 @@ main {
   text-align: center;
 }
 
-.foto-diretoria,
-.iniciais-diretoria {
+.foto-diretoria {
   width: 96px;
   height: 96px;
   flex: 0 0 auto;
   border-radius: 999px;
-}
-
-.foto-diretoria {
   object-fit: cover;
   border: 3px solid rgba(var(--cor-principal-rgb), 0.18);
   box-shadow: 0 8px 18px rgba(var(--cor-principal-rgb), 0.16);
-}
-
-.iniciais-diretoria {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-profunda));
-  border: 3px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 8px 18px rgba(var(--cor-principal-rgb), 0.16);
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.foto-diretoria[hidden] + .iniciais-diretoria {
-  display: inline-flex;
 }
 
 .cartao-diretoria p {
@@ -2563,6 +2554,10 @@ main {
 
   .secao {
     padding: 64px 0;
+  }
+
+  .midia-quem-somos {
+    margin: 28px 0 0;
   }
 
   .painel-suave,
