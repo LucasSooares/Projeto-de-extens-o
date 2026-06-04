@@ -1,357 +1,428 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lei Maria da Penha - SOS Mulher</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="src/styles.css" />
-  </head>
-  <body data-pagina="lei">
-    <!-- Cabeçalho compartilhado: logo, uma navegação principal e botão de celular. -->
-    <header class="cabecalho-site">
-      <div class="conteudo-limite area-navegacao">
-        <a class="marca" href="index.html" aria-label="SOS Mulher - Início">
-          <img class="marca-logo" src="src/img/logo.png" alt="" aria-hidden="true" decoding="async" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lei Maria da Penha - SOS Mulher</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+
+<body data-pagina="lei">
+  <!-- Cabeçalho compartilhado: logo, uma navegação principal e botão de celular. -->
+  <header class="cabecalho-site">
+    <div class="conteudo-limite area-navegacao">
+      <a class="marca" href="index.html" aria-label="SOS Mulher - Início">
+        <img class="marca-logo" src="src/img/logo.png" alt="" aria-hidden="true" decoding="async" />
+        <span>SOS Mulher</span>
+      </a>
+
+      <nav class="navegacao-principal" id="menu-principal" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <span class="separador-navegacao" aria-hidden="true"></span>
+        <a href="saude-bem-estar.html">Saúde e Bem-Estar</a>
+        <details class="menu-direitos">
+          <summary>
+            Seus Direitos
+            <span class="icone icone-pequeno bi bi-chevron-down" aria-hidden="true"></span>
+          </summary>
+          <div class="painel-menu">
+            <a href="lei-maria-da-penha.html">Lei Maria da Penha</a>
+            <a href="perguntas-frequentes.html">Perguntas Frequentes</a>
+          </div>
+        </details>
+      </nav>
+
+      <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal"
+        aria-label="Abrir menu">
+        <span class="icone bi bi-list" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Barra fixa de retorno para voltar à página inicial. -->
+    <div class="barra-voltar fixa">
+      <div class="conteudo-limite">
+        <a class="link-voltar" href="index.html">
+          <span class="icone icone-pequeno bi bi-arrow-left" aria-hidden="true"></span>
+          Voltar para página inicial
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero da página: título e resumo do conteúdo sobre a lei. -->
+    <section class="destaque-pagina">
+      <div class="conteudo-limite">
+        <span class="icone icone-grande bi bi-bank" aria-hidden="true"></span>
+        <h1>Lei Maria da Penha</h1>
+        <p>Conheça seus direitos e saiba como se proteger</p>
+        <div class="linha-etiquetas">
+          <span>Lei nº 11.340/2006</span>
+          <span>Proteção à Mulher</span>
+          <span>Direitos Garantidos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegação interna: leva diretamente aos blocos desta página. -->
+    <div class="subnavegacao">
+      <div class="conteudo-limite">
+        <nav aria-label="Navegação interna">
+          <a href="#tipos-violencia">Tipos de Violência</a>
+          <a href="#seus-direitos">Seus Direitos</a>
+          <a href="#medidas-protetivas">Medidas Protetivas</a>
+          <a href="#como-solicitar">Como Solicitar</a>
+          <a href="#emergencia">Emergência</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Tipos de violência: explicação e exemplos previstos pela Lei Maria da Penha. -->
+    <section class="secao fundo-azul-suave" id="tipos-violencia">
+      <div class="conteudo-limite">
+        <div class="destaque-conteudo">
+          <span class="etiqueta">Lei nº 11.340/2006</span>
+          <h2>Lei Maria da Penha</h2>
+          <div class="linha-destaque"></div>
+        </div>
+
+        <div class="painel-artigo" style="margin-top: 80px;">
+          <p>
+            A <strong>Lei nº 11.340/2006</strong>, conhecida como
+            <strong>Lei Maria da Penha</strong>, é um marco na proteção dos direitos
+            das mulheres no Brasil. Criada para coibir e prevenir a violência
+            doméstica e familiar contra a mulher, a lei é considerada uma das três
+            melhores legislações do mundo no enfrentamento à violência contra as mulheres.
+          </p>
+          <p>
+            A lei recebeu este nome em homenagem à biofarmacêutica
+            <strong>Maria da Penha Maia Fernandes</strong>, que sobreviveu a duas
+            tentativas de assassinato pelo então marido. Após anos de luta, seu caso
+            ganhou repercussão internacional e levou à criação desta importante legislação.
+          </p>
+        </div>
+
+        <div class="cabecalho-secao" style="margin-top: 80px;">
+          <h2 style="color: var(--texto); font-weight: 700;">5 Tipos de Violência</h2>
+          <p>
+            A Lei Maria da Penha reconhece e protege contra todos estes tipos de
+            violência. Reconhecer a violência é o primeiro passo para buscar ajuda
+            e proteção.
+          </p>
+          <div class="linha-destaque" style="margin-top: 24px;"></div>
+        </div>
+
+        <div class="lista-violencias">
+          <article class="cartao-violencia">
+            <header>
+              <span class="icone-atuacao"><span class="icone bi bi-person-x" aria-hidden="true"></span></span>
+              <h4>Violência Física</h4>
+            </header>
+            <p>Qualquer conduta que ofenda a integridade ou saúde corporal da mulher.</p>
+            <div class="caixa-exemplos">
+              <strong>Exemplos:</strong>
+              <ul>
+                <li>Empurrões, tapas, socos, chutes</li>
+                <li>Queimaduras, cortes, mordidas</li>
+                <li>Arremesso de objetos</li>
+                <li>Estrangulamento</li>
+                <li>Uso de armas ou objetos para agredir</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="cartao-violencia">
+            <header>
+              <span class="icone-atuacao"><span class="icone bi bi-heart-fill" aria-hidden="true"></span></span>
+              <h4>Violência Psicológica</h4>
+            </header>
+            <p>
+              Qualquer conduta que cause dano emocional, diminuição da autoestima
+              ou controle sobre ações e comportamentos.
+            </p>
+            <div class="caixa-exemplos">
+              <strong>Exemplos:</strong>
+              <ul>
+                <li>Humilhações, xingamentos, insultos constantes</li>
+                <li>Ameaças, chantagem emocional</li>
+                <li>Isolamento de amigos e família</li>
+                <li>Controle excessivo sobre roupas, celular e locais frequentados</li>
+                <li>Ridicularização em público ou privado</li>
+                <li>Vigilância e perseguição constante</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="cartao-violencia">
+            <header>
+              <span class="icone-atuacao"><span class="icone bi bi-chat-dots" aria-hidden="true"></span></span>
+              <h4>Violência Sexual</h4>
+            </header>
+            <p>
+              Qualquer ação que force a mulher a presenciar, manter ou participar de
+              relação sexual não desejada.
+            </p>
+            <div class="caixa-exemplos">
+              <strong>Exemplos:</strong>
+              <ul>
+                <li>Forçar relação sexual sem consentimento</li>
+                <li>Impedir uso de métodos contraceptivos</li>
+                <li>Forçar gravidez ou aborto</li>
+                <li>Forçar a assistir pornografia</li>
+                <li>Toques e carícias não consentidas</li>
+                <li>Estupro conjugal, violência sexual pelo parceiro</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="cartao-violencia">
+            <header>
+              <span class="icone-atuacao"><span class="icone bi bi-cash-coin" aria-hidden="true"></span></span>
+              <h4>Violência Patrimonial</h4>
+            </header>
+            <p>
+              Qualquer conduta que configure retenção, subtração ou destruição de
+              objetos, documentos e bens.
+            </p>
+            <div class="caixa-exemplos">
+              <strong>Exemplos:</strong>
+              <ul>
+                <li>Controlar ou reter salário e cartões</li>
+                <li>Destruir objetos pessoais ou documentos</li>
+                <li>Vender ou doar pertences sem consentimento</li>
+                <li>Impedir de trabalhar ou estudar</li>
+                <li>Recusar pensão alimentícia</li>
+                <li>Destruição de bens da casa</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="cartao-violencia">
+            <header>
+              <span class="icone-atuacao"><span class="icone bi bi-exclamation-triangle"
+                  aria-hidden="true"></span></span>
+              <h4>Violência Moral</h4>
+            </header>
+            <p>Qualquer conduta que configure calúnia, difamação ou injúria contra a mulher.</p>
+            <div class="caixa-exemplos">
+              <strong>Exemplos:</strong>
+              <ul>
+                <li>Acusar falsamente de traição</li>
+                <li>Espalhar mentiras e boatos</li>
+                <li>Difamar nas redes sociais</li>
+                <li>Expor a intimidade publicamente</li>
+                <li>Ofender a honra e reputação</li>
+                <li>Divulgar fotos ou vídeos íntimos sem autorização</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="painel-direitos" style="margin-top: 64px;">
+          <h4 style="margin: 0 0 32px; text-align: center; font-size: 24px;">Informações Importantes</h4>
+          <div class="grade-importante">
+            <div>
+              <p class="item-ponto">A violência raramente ocorre de forma isolada - geralmente há combinação de vários
+                tipos</p>
+              <p class="item-ponto">A violência tende a aumentar em frequência e intensidade com o tempo</p>
+              <p class="item-ponto">Não existe "violência leve" - toda violência é grave e merece atenção</p>
+            </div>
+            <div>
+              <p class="item-ponto"><strong>Você NÃO é culpada pela violência que sofre</strong></p>
+              <p class="item-ponto"><strong>Buscar ajuda é um ato de coragem, não de fraqueza</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direitos, medidas protetivas, passo a passo e contatos de emergência. -->
+    <section class="secao fundo-branco">
+      <div class="conteudo-limite">
+        <div class="bloco-direitos" id="seus-direitos">
+          <h3>Seus Direitos Garantidos por Lei</h3>
+          <div class="linha-destaque"></div>
+          <div class="painel-direitos">
+            <div class="grade-checagens">
+              <p class="item-checagem"><span class="icone bi bi-check-circle" aria-hidden="true"></span>Medidas
+                protetivas de urgência</p>
+              <p class="item-checagem"><span class="icone bi bi-check-circle" aria-hidden="true"></span>Afastamento do
+                agressor do lar</p>
+              <p class="item-checagem"><span class="icone bi bi-check-circle" aria-hidden="true"></span>Proibição de
+                aproximação e contato</p>
+              <p class="item-checagem"><span class="icone bi bi-check-circle" aria-hidden="true"></span>Atendimento
+                prioritário em delegacias</p>
+              <p class="item-checagem"><span class="icone bi bi-check-circle" aria-hidden="true"></span>Proteção
+                policial quando necessário</p>
+              <p class="item-checagem"><span class="icone bi bi-check-circle" aria-hidden="true"></span>Assistência
+                jurídica gratuita</p>
+              <p class="item-checagem"><span class="icone bi bi-check-circle" aria-hidden="true"></span>Encaminhamento a
+                programas de proteção</p>
+              <p class="item-checagem"><span class="icone bi bi-check-circle" aria-hidden="true"></span>Prioridade na
+                matrícula dos filhos em escola próxima</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bloco-direitos" id="medidas-protetivas">
+          <h3>Medidas Protetivas de Urgência</h3>
+          <p>São ações que o juiz pode determinar para garantir sua segurança imediatamente.</p>
+          <div class="linha-destaque"></div>
+          <div class="grade-medidas" style="margin-top: 48px;">
+            <article class="cartao-medida">
+              <h4>Suspensão de porte de armas</h4>
+              <p>O agressor fica proibido de possuir ou portar armas.</p>
+            </article>
+            <article class="cartao-medida">
+              <h4>Afastamento do lar</h4>
+              <p>Determinação de saída do agressor da casa.</p>
+            </article>
+            <article class="cartao-medida">
+              <h4>Distanciamento</h4>
+              <p>Proibição de aproximação, geralmente entre 200 e 500 metros.</p>
+            </article>
+            <article class="cartao-medida">
+              <h4>Proibição de contato</h4>
+              <p>Não pode ligar, mandar mensagens ou procurar por qualquer meio.</p>
+            </article>
+            <article class="cartao-medida">
+              <h4>Restrição de visitas</h4>
+              <p>Limitação ou suspensão de visitas aos filhos.</p>
+            </article>
+            <article class="cartao-medida">
+              <h4>Prestação de alimentos</h4>
+              <p>Garantia de sustento financeiro provisório.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="bloco-direitos" id="como-solicitar">
+          <h3>Como Solicitar Medida Protetiva</h3>
+          <p>Processo rápido e gratuito - você não precisa de advogado.</p>
+          <div class="linha-destaque"></div>
+          <div class="passos-largos" style="margin-top: 48px;">
+            <article class="cartao-passo-largo"><span class="selo-passo">1</span>
+              <div>
+                <h4>Registre o Boletim de Ocorrência</h4>
+                <p>Vá até uma Delegacia da Mulher (DDM) ou Delegacia comum. Relate a violência sofrida. Não é necessário
+                  levar testemunhas ou provas neste momento.</p>
+              </div>
+            </article>
+            <article class="cartao-passo-largo"><span class="selo-passo">2</span>
+              <div>
+                <h4>Solicite as Medidas Protetivas</h4>
+                <p>Na delegacia, solicite as medidas protetivas de urgência. A delegacia encaminhará o pedido ao juiz em
+                  até 48 horas.</p>
+              </div>
+            </article>
+            <article class="cartao-passo-largo"><span class="selo-passo">3</span>
+              <div>
+                <h4>Decisão Judicial</h4>
+                <p>O juiz tem até 48 horas para decidir sobre as medidas. Você será informada sobre a decisão. As
+                  medidas podem ser concedidas mesmo sem audiência prévia.</p>
+              </div>
+            </article>
+            <article class="cartao-passo-largo"><span class="selo-passo">4</span>
+              <div>
+                <h4>Cumprimento e Fiscalização</h4>
+                <p>Após concedidas, as medidas são notificadas ao agressor. A Patrulha Maria da Penha fiscaliza o
+                  cumprimento. Descumprimento pode levar à prisão.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="painel-direitos" style="margin-bottom: 64px;">
+          <h4 style="margin: 0 0 32px; text-align: center; font-size: 24px;">Informações Importantes</h4>
+          <div class="grade-importante">
+            <div>
+              <h5>Você NÃO precisa:</h5>
+              <p class="item-ponto">Ter advogado para solicitar medida protetiva</p>
+              <p class="item-ponto">Apresentar provas ou testemunhas inicialmente</p>
+              <p class="item-ponto">Estar separada ou divorciada</p>
+              <p class="item-ponto">Ter sofrido agressão física, pois violência psicológica também é protegida</p>
+              <p class="item-ponto">Pagar qualquer taxa ou custo</p>
+            </div>
+            <div>
+              <h5>Importante saber:</h5>
+              <p class="item-ponto">As medidas são gratuitas</p>
+              <p class="item-ponto">Podem ser concedidas em até 48 horas</p>
+              <p class="item-ponto">Você pode solicitar a qualquer momento</p>
+              <p class="item-ponto">Podem ser renovadas ou modificadas</p>
+              <p class="item-ponto">O descumprimento é crime e pode levar à prisão</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="painel-aviso" id="emergencia"
+          style="border: 2px solid var(--borda-forte); border-left-width: 2px; padding: 40px;">
+          <div class="cabecalho-secao" style="margin-bottom: 32px;">
+            <h2 style="color: var(--texto); font-size: 24px;">Em Caso de Emergência</h2>
+            <p>Entre em contato imediatamente</p>
+          </div>
+          <div class="grade-emergencia">
+            <article class="cartao-emergencia"><span><span class="icone bi bi-telephone"
+                  aria-hidden="true"></span>Emergência</span><a href="tel:190">190</a></article>
+            <article class="cartao-emergencia"><span><span class="icone bi bi-telephone"
+                  aria-hidden="true"></span>Central 180</span><a href="tel:180">180 <small>(24h)</small></a></article>
+            <article class="cartao-emergencia"><span><span class="icone bi bi-telephone" aria-hidden="true"></span>DDM
+                SJC</span><a href="tel:1239414140">(12) 3941-4140</a></article>
+            <article class="cartao-emergencia"><span><span class="icone bi bi-whatsapp" aria-hidden="true"></span>SOS
+                Mulher</span><a href="https://wa.me/5512992209020" target="_blank" rel="noopener noreferrer">(12)
+                99220-9020</a></article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé com contatos, dados institucionais e endereços. -->
+  <footer class="rodape-site">
+    <div class="conteudo-limite grade-rodape">
+      <div>
+        <a class="marca marca-rodape" href="index.html">
+          <img class="marca-logo pequeno" src="src/img/logo.png" alt="" aria-hidden="true" loading="lazy"
+            decoding="async" />
           <span>SOS Mulher</span>
         </a>
-
-        <nav class="navegacao-principal" id="menu-principal" aria-label="Navegação principal">
-          <a href="index.html">Início</a>
-          <span class="separador-navegacao" aria-hidden="true"></span>
-          <a href="saude-bem-estar.html">Saúde e Bem-Estar</a>
-          <details class="menu-direitos">
-            <summary>
-              Seus Direitos
-              <span class="icone icone-pequeno" data-icone="seta-baixo"></span>
-            </summary>
-            <div class="painel-menu">
-              <a href="lei-maria-da-penha.html">Lei Maria da Penha</a>
-              <a href="perguntas-frequentes.html">Perguntas Frequentes</a>
-            </div>
-          </details>
-        </nav>
-
-        <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
-          <span class="icone" data-icone="menu"></span>
-        </button>
+        <p>Desde 1983 acolhendo e fortalecendo mulheres em situação de vulnerabilidade em São José dos Campos.</p>
+        <p>Atendimento <strong>gratuito e sigiloso</strong></p>
       </div>
-    </header>
-
-    <main>
-      <!-- Barra fixa de retorno para voltar à página inicial. -->
-      <div class="barra-voltar fixa">
-        <div class="conteudo-limite">
-          <a class="link-voltar" href="index.html">
-            <span class="icone icone-pequeno" data-icone="seta-voltar"></span>
-            Voltar para página inicial
-          </a>
-        </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5512992209020" target="_blank" rel="noopener noreferrer"><span
+            class="icone icone-pequeno bi bi-whatsapp" aria-hidden="true"></span>(12) 99220-9020</a>
+        <a href="mailto:sosmulher.oficialsjc@gmail.com"><span class="icone icone-pequeno bi bi-envelope"
+            aria-hidden="true"></span>sosmulher.oficialsjc@gmail.com</a>
+        <a href="https://instagram.com/sosmulher.oficialsjc" target="_blank" rel="noopener noreferrer"><span
+            class="icone icone-pequeno bi bi-instagram" aria-hidden="true"></span>@sosmulher.oficialsjc</a>
       </div>
-
-      <!-- Hero da página: título e resumo do conteúdo sobre a lei. -->
-      <section class="destaque-pagina">
-        <div class="conteudo-limite">
-          <span class="icone icone-grande" data-icone="balanca"></span>
-          <h1>Lei Maria da Penha</h1>
-          <p>Conheça seus direitos e saiba como se proteger</p>
-          <div class="linha-etiquetas">
-            <span>Lei nº 11.340/2006</span>
-            <span>Proteção à Mulher</span>
-            <span>Direitos Garantidos</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Navegação interna: leva diretamente aos blocos desta página. -->
-      <div class="subnavegacao">
-        <div class="conteudo-limite">
-          <nav aria-label="Navegação interna">
-            <a href="#tipos-violencia">Tipos de Violência</a>
-            <a href="#seus-direitos">Seus Direitos</a>
-            <a href="#medidas-protetivas">Medidas Protetivas</a>
-            <a href="#como-solicitar">Como Solicitar</a>
-            <a href="#emergencia">Emergência</a>
-          </nav>
-        </div>
+      <div>
+        <h4>Institucional</h4>
+        <p><strong>CNPJ</strong><br />53.320.909/0001-93</p>
+        <p><strong>Diretoria</strong><br />Beth Montezano - Presidente<br />Ana Cristina - Vice-presidenta</p>
       </div>
-
-      <!-- Tipos de violência: explicação e exemplos previstos pela Lei Maria da Penha. -->
-      <section class="secao fundo-suave" id="tipos-violencia">
-        <div class="conteudo-limite">
-          <div class="destaque-conteudo">
-            <span class="etiqueta">Lei nº 11.340/2006</span>
-            <h2>Lei Maria da Penha</h2>
-            <div class="linha-destaque"></div>
-          </div>
-
-          <div class="painel-artigo" style="margin-top: 80px;">
-            <p>
-              A <strong>Lei nº 11.340/2006</strong>, conhecida como
-              <strong>Lei Maria da Penha</strong>, é um marco na proteção dos direitos
-              das mulheres no Brasil. Criada para coibir e prevenir a violência
-              doméstica e familiar contra a mulher, a lei é considerada uma das três
-              melhores legislações do mundo no enfrentamento à violência contra as mulheres.
-            </p>
-            <p>
-              A lei recebeu este nome em homenagem à biofarmacêutica
-              <strong>Maria da Penha Maia Fernandes</strong>, que sobreviveu a duas
-              tentativas de assassinato pelo então marido. Após anos de luta, seu caso
-              ganhou repercussão internacional e levou à criação desta importante legislação.
-            </p>
-          </div>
-
-          <div class="cabecalho-secao" style="margin-top: 80px;">
-            <h2 style="color: var(--texto); font-weight: 700;">5 Tipos de Violência</h2>
-            <p>
-              A Lei Maria da Penha reconhece e protege contra todos estes tipos de
-              violência. Reconhecer a violência é o primeiro passo para buscar ajuda
-              e proteção.
-            </p>
-            <div class="linha-destaque" style="margin-top: 24px;"></div>
-          </div>
-
-          <div class="lista-violencias">
-            <article class="cartao-violencia">
-              <header>
-                <span class="icone-atuacao"><span class="icone" data-icone="usuario-bloqueado"></span></span>
-                <h4>Violência Física</h4>
-              </header>
-              <p>Qualquer conduta que ofenda a integridade ou saúde corporal da mulher.</p>
-              <div class="caixa-exemplos">
-                <strong>Exemplos:</strong>
-                <ul>
-                  <li>Empurrões, tapas, socos, chutes</li>
-                  <li>Queimaduras, cortes, mordidas</li>
-                  <li>Arremesso de objetos</li>
-                  <li>Estrangulamento</li>
-                  <li>Uso de armas ou objetos para agredir</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="cartao-violencia">
-              <header>
-                <span class="icone-atuacao"><span class="icone" data-icone="coracao"></span></span>
-                <h4>Violência Psicológica</h4>
-              </header>
-              <p>
-                Qualquer conduta que cause dano emocional, diminuição da autoestima
-                ou controle sobre ações e comportamentos.
-              </p>
-              <div class="caixa-exemplos">
-                <strong>Exemplos:</strong>
-                <ul>
-                  <li>Humilhações, xingamentos, insultos constantes</li>
-                  <li>Ameaças, chantagem emocional</li>
-                  <li>Isolamento de amigos e família</li>
-                  <li>Controle excessivo sobre roupas, celular e locais frequentados</li>
-                  <li>Ridicularização em público ou privado</li>
-                  <li>Vigilância e perseguição constante</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="cartao-violencia">
-              <header>
-                <span class="icone-atuacao"><span class="icone" data-icone="mensagem"></span></span>
-                <h4>Violência Sexual</h4>
-              </header>
-              <p>
-                Qualquer ação que force a mulher a presenciar, manter ou participar de
-                relação sexual não desejada.
-              </p>
-              <div class="caixa-exemplos">
-                <strong>Exemplos:</strong>
-                <ul>
-                  <li>Forçar relação sexual sem consentimento</li>
-                  <li>Impedir uso de métodos contraceptivos</li>
-                  <li>Forçar gravidez ou aborto</li>
-                  <li>Forçar a assistir pornografia</li>
-                  <li>Toques e carícias não consentidas</li>
-                  <li>Estupro conjugal, violência sexual pelo parceiro</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="cartao-violencia">
-              <header>
-                <span class="icone-atuacao"><span class="icone" data-icone="dinheiro"></span></span>
-                <h4>Violência Patrimonial</h4>
-              </header>
-              <p>
-                Qualquer conduta que configure retenção, subtração ou destruição de
-                objetos, documentos e bens.
-              </p>
-              <div class="caixa-exemplos">
-                <strong>Exemplos:</strong>
-                <ul>
-                  <li>Controlar ou reter salário e cartões</li>
-                  <li>Destruir objetos pessoais ou documentos</li>
-                  <li>Vender ou doar pertences sem consentimento</li>
-                  <li>Impedir de trabalhar ou estudar</li>
-                  <li>Recusar pensão alimentícia</li>
-                  <li>Destruição de bens da casa</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="cartao-violencia">
-              <header>
-                <span class="icone-atuacao"><span class="icone" data-icone="alerta-triangulo"></span></span>
-                <h4>Violência Moral</h4>
-              </header>
-              <p>Qualquer conduta que configure calúnia, difamação ou injúria contra a mulher.</p>
-              <div class="caixa-exemplos">
-                <strong>Exemplos:</strong>
-                <ul>
-                  <li>Acusar falsamente de traição</li>
-                  <li>Espalhar mentiras e boatos</li>
-                  <li>Difamar nas redes sociais</li>
-                  <li>Expor a intimidade publicamente</li>
-                  <li>Ofender a honra e reputação</li>
-                  <li>Divulgar fotos ou vídeos íntimos sem autorização</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-
-          <div class="painel-direitos" style="margin-top: 64px;">
-            <h4 style="margin: 0 0 32px; text-align: center; font-size: 24px;">Informações Importantes</h4>
-            <div class="grade-importante">
-              <div>
-                <p class="item-ponto">A violência raramente ocorre de forma isolada - geralmente há combinação de vários tipos</p>
-                <p class="item-ponto">A violência tende a aumentar em frequência e intensidade com o tempo</p>
-                <p class="item-ponto">Não existe "violência leve" - toda violência é grave e merece atenção</p>
-              </div>
-              <div>
-                <p class="item-ponto"><strong>Você NÃO é culpada pela violência que sofre</strong></p>
-                <p class="item-ponto"><strong>Buscar ajuda é um ato de coragem, não de fraqueza</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Direitos, medidas protetivas, passo a passo e contatos de emergência. -->
-      <section class="secao fundo-branco">
-        <div class="conteudo-limite">
-          <div class="bloco-direitos" id="seus-direitos">
-            <h3>Seus Direitos Garantidos por Lei</h3>
-            <div class="linha-destaque"></div>
-            <div class="painel-direitos">
-              <div class="grade-checagens">
-                <p class="item-checagem"><span class="icone" data-icone="confirmacao-circulo"></span>Medidas protetivas de urgência</p>
-                <p class="item-checagem"><span class="icone" data-icone="confirmacao-circulo"></span>Afastamento do agressor do lar</p>
-                <p class="item-checagem"><span class="icone" data-icone="confirmacao-circulo"></span>Proibição de aproximação e contato</p>
-                <p class="item-checagem"><span class="icone" data-icone="confirmacao-circulo"></span>Atendimento prioritário em delegacias</p>
-                <p class="item-checagem"><span class="icone" data-icone="confirmacao-circulo"></span>Proteção policial quando necessário</p>
-                <p class="item-checagem"><span class="icone" data-icone="confirmacao-circulo"></span>Assistência jurídica gratuita</p>
-                <p class="item-checagem"><span class="icone" data-icone="confirmacao-circulo"></span>Encaminhamento a programas de proteção</p>
-                <p class="item-checagem"><span class="icone" data-icone="confirmacao-circulo"></span>Prioridade na matrícula dos filhos em escola próxima</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bloco-direitos" id="medidas-protetivas">
-            <h3>Medidas Protetivas de Urgência</h3>
-            <p>São ações que o juiz pode determinar para garantir sua segurança imediatamente.</p>
-            <div class="linha-destaque"></div>
-            <div class="grade-medidas" style="margin-top: 48px;">
-              <article class="cartao-medida"><h4>Suspensão de porte de armas</h4><p>O agressor fica proibido de possuir ou portar armas.</p></article>
-              <article class="cartao-medida"><h4>Afastamento do lar</h4><p>Determinação de saída do agressor da casa.</p></article>
-              <article class="cartao-medida"><h4>Distanciamento</h4><p>Proibição de aproximação, geralmente entre 200 e 500 metros.</p></article>
-              <article class="cartao-medida"><h4>Proibição de contato</h4><p>Não pode ligar, mandar mensagens ou procurar por qualquer meio.</p></article>
-              <article class="cartao-medida"><h4>Restrição de visitas</h4><p>Limitação ou suspensão de visitas aos filhos.</p></article>
-              <article class="cartao-medida"><h4>Prestação de alimentos</h4><p>Garantia de sustento financeiro provisório.</p></article>
-            </div>
-          </div>
-
-          <div class="bloco-direitos" id="como-solicitar">
-            <h3>Como Solicitar Medida Protetiva</h3>
-            <p>Processo rápido e gratuito - você não precisa de advogado.</p>
-            <div class="linha-destaque"></div>
-            <div class="passos-largos" style="margin-top: 48px;">
-              <article class="cartao-passo-largo"><span class="selo-passo">1</span><div><h4>Registre o Boletim de Ocorrência</h4><p>Vá até uma Delegacia da Mulher (DDM) ou Delegacia comum. Relate a violência sofrida. Não é necessário levar testemunhas ou provas neste momento.</p></div></article>
-              <article class="cartao-passo-largo"><span class="selo-passo">2</span><div><h4>Solicite as Medidas Protetivas</h4><p>Na delegacia, solicite as medidas protetivas de urgência. A delegacia encaminhará o pedido ao juiz em até 48 horas.</p></div></article>
-              <article class="cartao-passo-largo"><span class="selo-passo">3</span><div><h4>Decisão Judicial</h4><p>O juiz tem até 48 horas para decidir sobre as medidas. Você será informada sobre a decisão. As medidas podem ser concedidas mesmo sem audiência prévia.</p></div></article>
-              <article class="cartao-passo-largo"><span class="selo-passo">4</span><div><h4>Cumprimento e Fiscalização</h4><p>Após concedidas, as medidas são notificadas ao agressor. A Patrulha Maria da Penha fiscaliza o cumprimento. Descumprimento pode levar à prisão.</p></div></article>
-            </div>
-          </div>
-
-          <div class="painel-direitos" style="margin-bottom: 64px;">
-            <h4 style="margin: 0 0 32px; text-align: center; font-size: 24px;">Informações Importantes</h4>
-            <div class="grade-importante">
-              <div>
-                <h5>Você NÃO precisa:</h5>
-                <p class="item-ponto">Ter advogado para solicitar medida protetiva</p>
-                <p class="item-ponto">Apresentar provas ou testemunhas inicialmente</p>
-                <p class="item-ponto">Estar separada ou divorciada</p>
-                <p class="item-ponto">Ter sofrido agressão física, pois violência psicológica também é protegida</p>
-                <p class="item-ponto">Pagar qualquer taxa ou custo</p>
-              </div>
-              <div>
-                <h5>Importante saber:</h5>
-                <p class="item-ponto">As medidas são gratuitas</p>
-                <p class="item-ponto">Podem ser concedidas em até 48 horas</p>
-                <p class="item-ponto">Você pode solicitar a qualquer momento</p>
-                <p class="item-ponto">Podem ser renovadas ou modificadas</p>
-                <p class="item-ponto">O descumprimento é crime e pode levar à prisão</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="painel-aviso" id="emergencia" style="border: 2px solid var(--borda-forte); border-left-width: 2px; padding: 40px;">
-            <div class="cabecalho-secao" style="margin-bottom: 32px;">
-              <h2 style="color: var(--texto); font-size: 24px;">Em Caso de Emergência</h2>
-              <p>Entre em contato imediatamente</p>
-            </div>
-            <div class="grade-emergencia">
-              <article class="cartao-emergencia"><span><span class="icone" data-icone="telefone"></span>Emergência</span><a href="tel:190">190</a></article>
-              <article class="cartao-emergencia"><span><span class="icone" data-icone="telefone"></span>Central 180</span><a href="tel:180">180 <small>(24h)</small></a></article>
-              <article class="cartao-emergencia"><span><span class="icone" data-icone="telefone"></span>DDM SJC</span><a href="tel:1239414140">(12) 3941-4140</a></article>
-              <article class="cartao-emergencia"><span><span class="icone" data-icone="telefone"></span>SOS Mulher</span><a href="https://wa.me/5512992209020" target="_blank" rel="noopener noreferrer">(12) 99220-9020</a></article>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Rodapé com contatos, dados institucionais e endereços. -->
-    <footer class="rodape-site">
-      <div class="conteudo-limite grade-rodape">
-        <div>
-          <a class="marca marca-rodape" href="index.html">
-            <img class="marca-logo pequeno" src="src/img/logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-            <span>SOS Mulher</span>
-          </a>
-          <p>Desde 1983 acolhendo e fortalecendo mulheres em situação de vulnerabilidade em São José dos Campos.</p>
-          <p>Atendimento <strong>gratuito e sigiloso</strong></p>
-        </div>
-        <div>
-          <h4>Contato</h4>
-          <a href="https://wa.me/5512992209020" target="_blank" rel="noopener noreferrer"><span class="icone icone-pequeno" data-icone="telefone"></span>(12) 99220-9020</a>
-          <a href="mailto:sosmulher.oficialsjc@gmail.com"><span class="icone icone-pequeno" data-icone="email"></span>sosmulher.oficialsjc@gmail.com</a>
-          <a href="https://instagram.com/sosmulher.oficialsjc" target="_blank" rel="noopener noreferrer"><span class="icone icone-pequeno" data-icone="instagram"></span>@sosmulher.oficialsjc</a>
-        </div>
-        <div>
-          <h4>Institucional</h4>
-          <p><strong>CNPJ</strong><br />53.320.909/0001-93</p>
-          <p><strong>Diretoria</strong><br />Beth Montezano - Presidente<br />Ana Cristina - Vice-presidenta</p>
-        </div>
-        <div>
-          <h4>Endereços</h4>
-          <p><strong>Sede SOS Mulher</strong><br />Rua José Cobra, nº 1300<br />Sociedade Amigos do Bairro 31 de Março (Satomar)<br />São José dos Campos - SP</p>
-          <p><strong>DDM - Delegacia da Mulher</strong><br />Avenida Comendador Vicente de Paulo, 234<br />Parque Residencial Aquarius<br />São José dos Campos - SP<br />Tel: (12) 3941-4140<br /><span class="status-verde">Atendimento 24 horas</span></p>
-        </div>
+      <div>
+        <h4>Endereços</h4>
+        <p><strong>Sede SOS Mulher</strong><br />Rua José Cobra, nº 1300<br />Sociedade Amigos do Bairro 31 de Março
+          (Satomar)<br />São José dos Campos - SP</p>
+        <p><strong>DDM - Delegacia da Mulher</strong><br />Avenida Comendador Vicente de Paulo, 234<br />Parque
+          Residencial Aquarius<br />São José dos Campos - SP<br />Tel: (12) 3941-4140<br /><span
+            class="status-verde">Atendimento 24 horas</span></p>
       </div>
-      <div class="rodape-final">© <span data-year></span> SOS Mulher. Todos os direitos reservados.</div>
-    </footer>
+    </div>
+    <div class="rodape-final">© <span data-year></span> SOS Mulher. Todos os direitos reservados.</div>
+  </footer>
 
-    <script src="src/script.js"></script>
-  </body>
+  <!-- Botão flutuante de emergência: fica fixo no canto da tela e liga para a Guarda Civil Municipal. -->
+  <a class="botao-emergencia-flutuante" href="tel:153" aria-label="Ligar para emergência 153">
+    <span class="icone bi bi-exclamation-triangle-fill" aria-hidden="true"></span>
+    <span>Estou em risco</span>
+  </a>
+
+  <script src="src/script.js"></script>
+</body>
+
 </html>
-
-

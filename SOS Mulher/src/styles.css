@@ -1,8 +1,24 @@
-/* Arquivo de estilos do site SOS Mulher.
+﻿/* Arquivo de estilos do site SOS Mulher.
    As classes usadas aqui se conectam diretamente com os atributos class="" dos HTMLs.
    Exemplo: class="cabecalho-site" no HTML recebe o visual definido em .cabecalho-site aqui. */
 
-/* Variáveis globais: cores, sombras, tamanhos e medidas reutilizadas no site inteiro. */
+/*
+  Mini glossÃ¡rio de CSS para estudar:
+  - Seletor: indica quem recebe o estilo. Exemplo: .botao escolhe class="botao".
+  - Propriedade: o que serÃ¡ alterado. Exemplo: color, background, margin.
+  - Valor: o resultado da propriedade. Exemplo: color: red.
+  - Classe: comeÃ§a com ponto no CSS. Exemplo: .cabecalho-site.
+  - :root: Ã¡rea onde guardamos variÃ¡veis globais do site.
+  - var(...): usa uma variÃ¡vel criada no :root.
+  - display: flex: organiza elementos em linha ou coluna com alinhamento fÃ¡cil.
+  - display: grid: organiza elementos em grade, como colunas de cartÃµes.
+  - @media: regras especiais para telas menores, como celular.
+  - hover: estilo aplicado quando o mouse passa por cima.
+  - z-index: controla o que fica na frente quando elementos se sobrepÃµem.
+*/
+
+/* VariÃ¡veis globais: cores, sombras, tamanhos e medidas reutilizadas no site inteiro.
+   Tudo que comeÃ§a com -- Ã© uma variÃ¡vel CSS. */
 :root {
   --cor-principal: #f20573;
   --cor-principal-rgb: 242, 5, 115;
@@ -17,6 +33,8 @@
   --texto-suave: #74757a;
   --fundo: #ffffff;
   --fundo-suave: #fbf8fa;
+  --fundo-azul-suave: #f4f8fb;
+  --fundo-verde-suave: #f4faf7;
   --borda: #e9e1e6;
   --borda-forte: rgba(var(--cor-principal-rgb), 0.22);
   --perigo: #dc2626;
@@ -30,13 +48,16 @@
   --altura-cabecalho: 72px;
 }
 
-/* Reset básico: deixa o comportamento inicial dos elementos mais previsível. */
+/* Reset bÃ¡sico: deixa o comportamento inicial dos elementos mais previsÃ­vel. */
 * {
+  /* border-box faz largura e altura incluÃ­rem padding e borda, evitando cÃ¡lculos confusos. */
   box-sizing: border-box;
 }
 
 html {
+  /* scroll-behavior deixa a rolagem interna mais suave. */
   scroll-behavior: smooth;
+  /* scroll-padding-top evita que o cabeÃ§alho fixo cubra o tÃ­tulo da seÃ§Ã£o ao clicar no menu. */
   scroll-padding-top: calc(var(--altura-cabecalho) + 18px);
 }
 
@@ -49,6 +70,7 @@ body {
 }
 
 body.menu-aberto {
+  /* Quando o menu mobile estÃ¡ aberto, impede a pÃ¡gina de rolar por trÃ¡s. */
   overflow: hidden;
 }
 
@@ -80,8 +102,9 @@ main {
   padding-top: var(--altura-cabecalho);
 }
 
-/* Utilitários gerais: classes pequenas reaproveitadas em várias partes do HTML. */
+/* UtilitÃ¡rios gerais: classes pequenas reaproveitadas em vÃ¡rias partes do HTML. */
 .conteudo-limite {
+  /* width: min(...) escolhe o menor valor entre a largura quase total e o limite mÃ¡ximo. */
   width: min(100% - 32px, var(--largura-conteudo));
   margin: 0 auto;
 }
@@ -102,6 +125,15 @@ main {
   background: var(--rosa-suave);
 }
 
+.fundo-azul-suave {
+  /* linear-gradient cria uma transiÃ§Ã£o suave entre duas cores. */
+  background: linear-gradient(180deg, var(--fundo-azul-suave) 0%, #ffffff 118%);
+}
+
+.fundo-verde-suave {
+  background: linear-gradient(180deg, var(--fundo-verde-suave) 0%, #ffffff 118%);
+}
+
 .centralizado {
   text-align: center;
 }
@@ -110,7 +142,8 @@ main {
   color: var(--texto-suave);
 }
 
-/* Ícones e marca: configura os ícones Material Symbols e o símbolo do SOS Mulher. */
+/* Ícones e marca: configura Bootstrap Icons e a identidade visual do SOS Mulher.
+   Bootstrap Icons usa classes como bi bi-telephone e bi bi-whatsapp direto no HTML. */
 .icone {
   display: inline-flex;
   width: 20px;
@@ -123,20 +156,6 @@ main {
   vertical-align: middle;
 }
 
-.icone.material-symbols-rounded {
-  font-family: "Material Symbols Rounded";
-  font-weight: normal;
-  font-style: normal;
-  text-transform: none;
-  letter-spacing: 0;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-  font-feature-settings: "liga";
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-}
 
 .icone-pequeno {
   width: 16px;
@@ -148,12 +167,6 @@ main {
   width: 64px;
   height: 64px;
   font-size: 64px;
-}
-
-.icone-enorme {
-  width: 96px;
-  height: 96px;
-  font-size: 96px;
 }
 
 .marca-logo {
@@ -174,10 +187,13 @@ main {
   padding: 3px;
 }
 
-/* Cabeçalho e navegação: o mesmo menu muda de formato no computador e no celular. */
+/* CabeÃ§alho e navegaÃ§Ã£o: o mesmo menu muda de formato no computador e no celular. */
 .cabecalho-site {
+  /* fixed mantÃ©m o cabeÃ§alho preso no topo mesmo quando a pÃ¡gina rola. */
   position: fixed;
+  /* inset Ã© um atalho para top, right, bottom e left. Aqui prende no topo. */
   inset: 0 0 auto 0;
+  /* z-index alto deixa o cabeÃ§alho acima do conteÃºdo. */
   z-index: 60;
   background: rgba(255, 255, 255, 0.98);
   box-shadow: var(--sombra-media);
@@ -187,6 +203,7 @@ main {
   width: min(100% - 64px, 1320px);
   min-height: var(--altura-cabecalho);
   display: flex;
+  /* align-items alinha verticalmente; justify-content distribui horizontalmente. */
   align-items: center;
   justify-content: space-between;
   gap: 22px;
@@ -248,6 +265,7 @@ main {
 }
 
 .menu-direitos {
+  /* relative permite posicionar o submenu absoluto em relaÃ§Ã£o a este bloco. */
   position: relative;
 }
 
@@ -265,6 +283,7 @@ main {
 }
 
 .painel-menu {
+  /* absolute tira o submenu do fluxo normal e posiciona abaixo do item "Seus Direitos". */
   position: absolute;
   top: 100%;
   left: 0;
@@ -296,8 +315,9 @@ main {
   border: 0;
 }
 
-/* Hero da página inicial: primeira dobra com título, botões, números e imagem. */
+/* Hero da pÃ¡gina inicial: primeira dobra com tÃ­tulo, botÃµes, nÃºmeros e imagem. */
 .secao-inicial {
+  /* relative permite posicionar fundos decorativos dentro desta seÃ§Ã£o. */
   position: relative;
   min-height: calc(100vh - var(--altura-cabecalho));
   display: flex;
@@ -307,12 +327,14 @@ main {
 }
 
 .fundo-inicial {
+  /* absolute faz o fundo ocupar a seÃ§Ã£o inteira sem empurrar o conteÃºdo. */
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, var(--cor-principal), rgba(var(--cor-principal-rgb), 0.94), rgba(var(--cor-principal-rgb), 0.78));
 }
 
 .fundo-inicial::before {
+  /* ::before cria uma camada decorativa pelo CSS, sem precisar de nova tag no HTML. */
   content: "";
   position: absolute;
   inset: 0;
@@ -323,6 +345,7 @@ main {
 }
 
 .grade-inicial {
+  /* grid divide o hero em duas colunas: texto e imagem. */
   position: relative;
   z-index: 1;
   display: grid;
@@ -361,6 +384,7 @@ main {
 .texto-inicial h1 {
   max-width: 680px;
   margin: 0 0 22px;
+  /* clamp usa: tamanho mÃ­nimo, tamanho flexÃ­vel e tamanho mÃ¡ximo. */
   font-size: clamp(42px, 5.2vw, 64px);
   font-weight: 650;
   line-height: 1.12;
@@ -487,6 +511,7 @@ main {
 }
 
 .midia-inicial {
+  /* Bloco que centraliza a imagem principal do hero. */
   position: relative;
   display: flex;
   align-items: center;
@@ -499,6 +524,7 @@ main {
 
 .midia-inicial::before,
 .midia-inicial::after {
+  /* Camadas decorativas de luz atrÃ¡s da logo principal. */
   content: "";
   position: absolute;
   pointer-events: none;
@@ -511,9 +537,9 @@ main {
   left: 49%;
   border-radius: 44% 56% 50% 50% / 52% 44% 56% 48%;
   background:
-    radial-gradient(ellipse at 50% 54%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.64) 34%, rgba(255, 255, 255, 0.22) 58%, rgba(255, 255, 255, 0) 76%);
-  filter: blur(14px);
-  opacity: 0.84;
+    radial-gradient(ellipse at 50% 54%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.78) 34%, rgba(255, 255, 255, 0.32) 58%, rgba(255, 255, 255, 0) 78%);
+  filter: blur(10px);
+  opacity: 0.96;
   transform: translate(-43%, -50%) rotate(-6deg);
 }
 
@@ -545,11 +571,12 @@ main {
   backdrop-filter: none;
   filter:
     saturate(1.04)
-    contrast(1.08)
-    drop-shadow(0 12px 20px rgba(63, 64, 68, 0.16));
+    contrast(1.14)
+    drop-shadow(0 0 16px rgba(255, 255, 255, 0.92))
+    drop-shadow(0 14px 24px rgba(63, 64, 68, 0.2));
 }
 
-/* Estrutura das seções: espaçamentos, títulos e blocos de texto. */
+/* Estrutura das seÃ§Ãµes: espaÃ§amentos, tÃ­tulos e blocos de texto. */
 .secao {
   padding: 80px 0;
 }
@@ -685,7 +712,6 @@ main {
 }
 
 .linha-atuacao h4,
-.cartao-apoio h3,
 .cartao-evento h3,
 .cartao-informacao h3,
 .linha-contato h4,
@@ -699,7 +725,6 @@ main {
 }
 
 .linha-atuacao p,
-.cartao-apoio p,
 .cartao-evento p,
 .cartao-passo p,
 .linha-contato p {
@@ -716,19 +741,19 @@ main {
 .cartao-diretoria {
   display: grid;
   justify-items: center;
-  gap: 12px;
+  gap: 14px;
   padding: 8px 0;
   text-align: center;
 }
 
 .foto-diretoria {
-  width: 96px;
-  height: 96px;
+  width: 168px;
+  height: 168px;
   flex: 0 0 auto;
   border-radius: 999px;
   object-fit: cover;
-  border: 3px solid rgba(var(--cor-principal-rgb), 0.18);
-  box-shadow: 0 8px 18px rgba(var(--cor-principal-rgb), 0.16);
+  border: 4px solid rgba(var(--cor-principal-rgb), 0.16);
+  box-shadow: 0 10px 22px rgba(var(--cor-principal-rgb), 0.16);
 }
 
 .cartao-diretoria p {
@@ -744,7 +769,7 @@ main {
   font-size: 16px;
 }
 
-/* Linha do tempo: organiza os principais marcos da história da SOS Mulher. */
+/* Linha do tempo: organiza os principais marcos da histÃ³ria da SOS Mulher. */
 .linha-do-tempo {
   display: grid;
   gap: 18px;
@@ -797,38 +822,7 @@ main {
   margin-top: 16px;
 }
 
-/* Rede de apoio e avisos: cart?es de contatos úteis e painel de medidas protetivas. */
-.grade-apoio {
-  max-width: 896px;
-  margin: 0 auto 48px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.cartao-apoio {
-  display: flex;
-  gap: 16px;
-  padding: 24px;
-  background: #ffffff;
-  border: 2px solid var(--borda-forte);
-  border-radius: var(--raio);
-  transition: border-color 160ms ease, box-shadow 160ms ease;
-}
-
-.cartao-apoio:hover {
-  border-color: var(--cor-principal);
-  box-shadow: var(--sombra-pequena);
-}
-
-.cartao-apoio strong {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--cor-principal);
-  font-size: 24px;
-  font-weight: 500;
-}
-
+/* Rede de apoio e avisos: cart?es de contatos Ãºteis e painel de medidas protetivas. */
 .bloco-rede {
   padding: 22px;
   background: #ffffff;
@@ -878,7 +872,6 @@ main {
   font-size: 14px;
 }
 
-.selo-urgente,
 .etiqueta-servico {
   display: inline-flex;
   align-items: center;
@@ -1009,9 +1002,7 @@ main {
 .painel-aviso ul,
 .duas-listas ul,
 .cartao-saude ul,
-.cartao-alerta ul,
-.rights-list,
-.simple-list {
+.cartao-alerta ul {
   margin: 0;
   padding-left: 22px;
   color: var(--texto-medio);
@@ -1020,21 +1011,23 @@ main {
 .painel-aviso li + li,
 .duas-listas li + li,
 .cartao-saude li + li,
-.cartao-alerta li + li,
-.simple-list li + li {
+.cartao-alerta li + li {
   margin-top: 4px;
 }
 
-/* Carrosséis: trilho, slides, setas e bolinhas de navegação. */
+/* CarrossÃ©is: trilho, slides, setas e bolinhas de navegaÃ§Ã£o. */
 .carrossel {
+  /* relative permite posicionar setas e controles dentro do carrossel. */
   position: relative;
 }
 
 .janela-carrossel {
+  /* overflow hidden esconde os slides que estÃ£o fora da Ã¡rea visÃ­vel. */
   overflow: hidden;
 }
 
 .trilho-carrossel {
+  /* O trilho Ã© a faixa que segura todos os slides lado a lado. */
   display: flex;
   align-items: stretch;
   transition: transform 420ms ease;
@@ -1043,6 +1036,7 @@ main {
 
 .trilho-carrossel.rolagem-continua {
   width: max-content;
+  /* animation chama a animaÃ§Ã£o rolagem-parceiros de forma infinita. */
   animation: rolagem-parceiros var(--duracao-rolagem, 18s) linear infinite;
   transition: none;
 }
@@ -1052,6 +1046,7 @@ main {
 }
 
 @keyframes rolagem-parceiros {
+  /* keyframes define o comeÃ§o e o fim de uma animaÃ§Ã£o CSS. */
   from {
     transform: translateX(0);
   }
@@ -1062,6 +1057,7 @@ main {
 }
 
 .slide-carrossel {
+  /* flex-basis de 100% faz um slide ocupar a largura total por padrÃ£o. */
   flex: 0 0 100%;
   min-width: 0;
   padding: 0 12px;
@@ -1315,6 +1311,12 @@ main {
   object-fit: cover;
 }
 
+.foto-evento-contida {
+  /* Para fotos verticais que ficam muito cortadas com object-fit: cover. */
+  object-fit: contain;
+  background: var(--fundo-suave);
+}
+
 .foto-evento:not([hidden]) ~ .marcador-imagem-evento,
 .foto-evento:not([hidden]) ~ small {
   display: none;
@@ -1384,10 +1386,11 @@ main {
 }
 
 .pontos-carrossel button.esta-ativo {
+  /* esta-ativo Ã© uma classe colocada pelo JavaScript na bolinha atual. */
   background: var(--cor-principal);
 }
 
-/* Doações e contato: cart?es de informações, formulário e aviso de emergência. */
+/* DoaÃ§Ãµes e contato: cart?es de informaÃ§Ãµes, formulÃ¡rio e aviso de emergÃªncia. */
 .grade-doacoes {
   max-width: 896px;
   margin: 0 auto 48px;
@@ -1517,6 +1520,7 @@ main {
 }
 
 .formulario-mensagem {
+  /* Caixa visual do formulÃ¡rio de contato. O envio Ã© feito pelo FormSubmit no HTML. */
   padding: 32px;
   background: #f3f4f6;
   border-radius: var(--raio);
@@ -1539,6 +1543,7 @@ main {
 
 .formulario-mensagem input,
 .formulario-mensagem textarea {
+  /* Inputs sÃ£o campos de uma linha; textarea Ã© o campo maior da mensagem. */
   width: 100%;
   margin-bottom: 16px;
   padding: 10px 16px;
@@ -1551,6 +1556,7 @@ main {
 
 .formulario-mensagem input:focus,
 .formulario-mensagem textarea:focus {
+  /* focus Ã© o estado quando a pessoa clicou ou navegou atÃ© o campo. */
   border-color: var(--cor-principal);
   box-shadow: 0 0 0 3px rgba(var(--cor-principal-rgb), 0.16);
 }
@@ -1559,7 +1565,45 @@ main {
   resize: vertical;
 }
 
-/* Perguntas frequentes: botão principal, lista de perguntas e respostas recolhíveis. */
+.pagina-obrigado {
+  /* PÃ¡gina exibida depois do envio, caso o _next do FormSubmit seja configurado. */
+  min-height: calc(100vh - var(--altura-cabecalho));
+  display: grid;
+  align-items: center;
+}
+
+.cartao-obrigado {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 56px);
+  background: #ffffff;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-media);
+  text-align: center;
+}
+
+.cartao-obrigado h1 {
+  margin: 18px 0 12px;
+  color: var(--texto);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+}
+
+.cartao-obrigado p {
+  max-width: 560px;
+  margin: 0 auto 16px;
+  color: var(--texto-medio);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.centralizar-acoes {
+  justify-content: center;
+  margin-top: 28px;
+}
+
+/* Perguntas frequentes: botÃ£o principal, lista de perguntas e respostas recolhÃ­veis. */
 .botao-secao-perguntas {
   width: min(100%, 896px);
   margin: 0 auto 24px;
@@ -1655,7 +1699,7 @@ main {
   line-height: 1.65;
 }
 
-/* Páginas internas: barra de voltar, hero interno, subnavegação e conteúdos legais. */
+/* PÃ¡ginas internas: barra de voltar, hero interno, subnavegaÃ§Ã£o e conteÃºdos legais. */
 .barra-voltar {
   background: #ffffff;
   border-bottom: 1px solid var(--borda);
@@ -2219,23 +2263,65 @@ main {
   font-style: italic;
 }
 
-.mais-conteudo {
-  padding: 48px 0;
+/* Botão flutuante de emergência: atalho fixo para ligar no 153 em qualquer ponto da página. */
+.botao-emergencia-flutuante {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0;
+  background: #dc2626;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  box-shadow: 0 16px 34px rgba(127, 29, 29, 0.32);
+  transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
 
-.mais-conteudo .painel-aviso {
-  text-align: center;
-  border: 2px solid var(--borda-forte);
-  border-left-width: 2px;
+.botao-emergencia-flutuante::after {
+  /* Cria um pulso discreto para indicar que é uma ação importante. */
+  content: "";
+  position: absolute;
+  inset: -6px;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgba(220, 38, 38, 0.24);
+  animation: pulso-emergencia 1.8s ease-out infinite;
 }
 
-.mais-conteudo h3 {
-  margin: 0 0 16px;
-  color: var(--cor-principal);
-  font-size: 24px;
+.botao-emergencia-flutuante:hover,
+.botao-emergencia-flutuante:focus-visible {
+  background: #b91c1c;
+  box-shadow: 0 18px 38px rgba(127, 29, 29, 0.42);
+  transform: translateY(-2px);
 }
 
-/* Rodapé: colunas finais com marca, contato, instituição e endereços. */
+.botao-emergencia-flutuante .icone {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+}
+
+@keyframes pulso-emergencia {
+  0% {
+    opacity: 0.75;
+    transform: scale(0.92);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.28);
+  }
+}
+
+/* RodapÃ©: colunas finais com marca, contato, instituiÃ§Ã£o e endereÃ§os. */
 .rodape-site {
   color: #ffffff;
   background: #111827;
@@ -2351,6 +2437,8 @@ main {
 }
 
 /* Responsividade: ajustes para tablet e celular. */
+/* @media aplica regras somente em certas larguras de tela.
+   max-width significa "atÃ© esta largura". */
 @media (max-width: 1120px) {
   .navegacao-principal {
     gap: 14px;
@@ -2360,14 +2448,17 @@ main {
 
 @media (max-width: 1023px) {
   :root {
+    /* Em tablet/celular o cabeÃ§alho fica um pouco menor. */
     --altura-cabecalho: 68px;
   }
 
   .botao-menu {
+    /* O botÃ£o do menu aparece apenas em telas menores. */
     display: inline-flex;
   }
 
   .navegacao-principal {
+    /* No celular, o menu vira um painel vertical abaixo do cabeÃ§alho. */
     position: fixed;
     top: var(--altura-cabecalho);
     right: 0;
@@ -2384,6 +2475,7 @@ main {
   }
 
   .navegacao-principal.esta-aberto {
+    /* esta-aberto Ã© adicionada pelo JavaScript quando o menu abre. */
     display: grid;
     gap: 6px;
   }
@@ -2442,7 +2534,6 @@ main {
     display: none;
   }
 
-  .grade-apoio,
   .grade-telefones,
   .grupos-rede,
   .grade-orientacoes,
@@ -2458,6 +2549,7 @@ main {
   .grade-alertas,
   .grade-dicas,
   .grade-rodape {
+    /* Em telas menores, grades com vÃ¡rias colunas viram uma coluna sÃ³. */
     grid-template-columns: 1fr;
   }
 
@@ -2573,7 +2665,6 @@ main {
     padding: 24px;
   }
 
-  .cartao-apoio,
   .linha-atuacao,
   .cartao-passo-largo,
   .linha-contato {
@@ -2678,4 +2769,14 @@ main {
     align-items: flex-start;
     flex-wrap: wrap;
   }
+
+  .botao-emergencia-flutuante {
+    right: 14px;
+    bottom: 14px;
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
 }
+
+
