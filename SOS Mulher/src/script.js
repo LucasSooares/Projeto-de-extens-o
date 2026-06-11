@@ -1,41 +1,41 @@
-﻿/*
+/*
   Arquivo JavaScript do site SOS Mulher.
 
-  JavaScript Ã© a linguagem que faz a pÃ¡gina reagir depois que ela abre:
-  menu de celular, carrossel, perguntas frequentes, Ã­cones e imagens.
+  JavaScript é a linguagem que faz a página reagir depois que ela abre:
+  menu de celular, carrossel, perguntas frequentes, ícones e imagens.
 
-  Mini glossÃ¡rio para estudar:
-  - document: representa a pÃ¡gina HTML inteira.
+  Mini glossário para estudar:
+  - document: representa a página HTML inteira.
   - querySelector: procura o primeiro elemento que combina com um seletor.
     Exemplo: ".botao-menu" procura class="botao-menu".
   - querySelectorAll: procura todos os elementos que combinam com um seletor.
-  - addEventListener: "escuta" uma aÃ§Ã£o, como click, load, error ou resize.
+  - addEventListener: "escuta" uma ação, como click, load, error ou resize.
   - classList: permite adicionar, remover ou alternar classes de um elemento.
   - Bootstrap Icons: biblioteca de ícones usada com classes como bi bi-telephone e bi bi-whatsapp.
   - data-*: atributos personalizados do HTML. Exemplo: data-carrossel.
   - dataset: forma de acessar atributos data-* pelo JavaScript.
   - hidden: atributo HTML que esconde um elemento.
-  - return: encerra a funÃ§Ã£o naquele ponto.
+  - return: encerra a função naquele ponto.
 */
 
 // Os ícones do Bootstrap Icons ficam direto no HTML.
 // Exemplo: <span class="icone bi bi-whatsapp" aria-hidden="true"></span>
 // Assim, o JavaScript só troca classes quando precisa mudar o desenho, como no botão do menu.
-// Controla a navegaÃ§Ã£o principal quando ela vira menu de celular em telas pequenas.
+// Controla a navegação principal quando ela vira menu de celular em telas pequenas.
 function configurarMenuMobile() {
-  // Procura no HTML o botÃ£o que abre o menu e a navegaÃ§Ã£o principal.
+  // Procura no HTML o botão que abre o menu e a navegação principal.
   const botao = document.querySelector(".botao-menu");
   const menu = document.querySelector(".navegacao-principal");
 
-  // Se algum elemento nÃ£o existir na pÃ¡gina, a funÃ§Ã£o para para evitar erro.
+  // Se algum elemento não existir na página, a função para para evitar erro.
   if (!botao || !menu) return;
 
-  // Quando o usuÃ¡rio clicar no botÃ£o, abre ou fecha o menu.
+  // Quando o usuário clicar no botão, abre ou fecha o menu.
   botao.addEventListener("click", () => {
-    // toggle alterna a classe: se nÃ£o tem, adiciona; se jÃ¡ tem, remove.
+    // toggle alterna a classe: se não tem, adiciona; se já tem, remove.
     const estaAberto = menu.classList.toggle("esta-aberto");
     document.body.classList.toggle("menu-aberto", estaAberto);
-    // aria-expanded ajuda acessibilidade: indica se o menu estÃ¡ aberto.
+    // aria-expanded ajuda acessibilidade: indica se o menu está aberto.
     botao.setAttribute("aria-expanded", String(estaAberto));
 
     const icone = botao.querySelector(".icone");
@@ -62,9 +62,9 @@ function configurarMenuMobile() {
   });
 }
 
-// Faz os links internos, como #contato e #doacoes, rolarem suavemente atÃ© a seÃ§Ã£o.
+// Faz os links internos, como #contato e #doacoes, rolarem suavemente até a seção.
 function configurarRolagemSuave() {
-  // a[href^="#"] significa: links cujo href comeÃ§a com #, como href="#contato".
+  // a[href^="#"] significa: links cujo href começa com #, como href="#contato".
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (evento) => {
       const seletor = link.getAttribute("href");
@@ -73,19 +73,19 @@ function configurarRolagemSuave() {
       const destino = document.querySelector(seletor);
       if (!destino) return;
 
-      // Impede o comportamento padrÃ£o do navegador, que pula direto para a seÃ§Ã£o.
+      // Impede o comportamento padrão do navegador, que pula direto para a seção.
       evento.preventDefault();
-      // Rola a tela suavemente atÃ© a seÃ§Ã£o encontrada.
+      // Rola a tela suavemente até a seção encontrada.
       destino.scrollIntoView({ behavior: "smooth", block: "start" });
-      // Atualiza o endereÃ§o com #contato, #doacoes etc. sem recarregar a pÃ¡gina.
+      // Atualiza o endereço com #contato, #doacoes etc. sem recarregar a página.
       history.replaceState(null, "", seletor);
     });
   });
 }
 
-// Abre e fecha a seÃ§Ã£o de Perguntas Frequentes e garante que sÃ³ uma resposta fique aberta.
+// Abre e fecha a seção de perguntas frequentes e garante que só uma resposta fique aberta.
 function configurarPerguntasFrequentes() {
-  // data-secao-perguntas marca, no HTML, qual Ã¡rea serÃ¡ controlada por esta funÃ§Ã£o.
+  // data-secao-perguntas marca, no HTML, qual área será controlada por esta função.
   document.querySelectorAll("[data-secao-perguntas]").forEach((secao) => {
     const botaoDaSecao = secao.querySelector("[data-botao-perguntas]");
     const listaDePerguntas = secao.querySelector("[data-lista-perguntas]");
@@ -93,7 +93,7 @@ function configurarPerguntasFrequentes() {
 
     if (!botaoDaSecao || !listaDePerguntas) return;
 
-    // FunÃ§Ã£o auxiliar: recebe true para abrir e false para fechar.
+    // Função auxiliar: recebe true para abrir e false para fechar.
     const definirAberto = (aberto) => {
       botaoDaSecao.setAttribute("aria-expanded", String(aberto));
       listaDePerguntas.hidden = !aberto;
@@ -131,19 +131,19 @@ function configurarPerguntasFrequentes() {
   });
 }
 
-// Define quantos cartÃµes aparecem por vez no carrossel conforme o tamanho da tela.
+// Define quantos cartões aparecem por vez no carrossel conforme o tamanho da tela.
 function pegarQuantidadeVisivel(carrossel) {
   // window.innerWidth guarda a largura atual da tela em pixels.
   const larguraDaTela = window.innerWidth;
 
-  // dataset.visivelCelular lÃª data-visivel-celular do HTML.
+  // dataset.visivelCelular lê data-visivel-celular do HTML.
   if (larguraDaTela < 640) return Number(carrossel.dataset.visivelCelular || 1);
   if (larguraDaTela < 1024) return Number(carrossel.dataset.visivelTablet || 2);
 
   return Number(carrossel.dataset.visivelComputador || 3);
 }
 
-// Controla os carrossÃ©is de parceiros e galeria: setas, bolinhas e rotaÃ§Ã£o automÃ¡tica.
+// Controla os carrosséis de parceiros e galeria: setas, bolinhas e rotação automática.
 // Faz a faixa de parceiros andar sem pausas, duplicando os slides para criar um ciclo infinito.
 function configurarRolagemContinua(carrossel, trilho, slides) {
   // Evita duplicar os slides mais de uma vez.
@@ -158,7 +158,7 @@ function configurarRolagemContinua(carrossel, trilho, slides) {
 
   trilho.dataset.slidesDuplicados = "true";
   trilho.classList.add("rolagem-continua");
-  // setProperty altera uma variÃ¡vel CSS pelo JavaScript.
+  // setProperty altera uma variável CSS pelo JavaScript.
   trilho.style.setProperty("--duracao-rolagem", `${Number(carrossel.dataset.duracaoRolagem || 18)}s`);
 }
 
@@ -173,25 +173,25 @@ function configurarCarrosseis() {
 
     if (!trilho || slides.length === 0) return;
 
-    // O carrossel de parceiros usa rolagem contÃ­nua, sem setas.
+    // O carrossel de parceiros usa rolagem contínua, sem setas.
     if (carrossel.dataset.rolagemContinua === "true") {
       configurarRolagemContinua(carrossel, trilho, slides);
       return;
     }
 
-    // let Ã© usado quando o valor muda durante a execuÃ§Ã£o.
+    // let é usado quando o valor muda durante a execução.
     let indiceAtual = 0;
     let temporizador = null;
     let quantidadeVisivel = pegarQuantidadeVisivel(carrossel);
 
-    // Math.max garante que o resultado nunca serÃ¡ menor que zero.
+    // Math.max garante que o resultado nunca será menor que zero.
     const pegarIndiceMaximo = () => Math.max(0, slides.length - quantidadeVisivel);
 
     const renderizar = () => {
       quantidadeVisivel = pegarQuantidadeVisivel(carrossel);
       const larguraDoSlide = 100 / quantidadeVisivel;
 
-      // flexBasis define quanto espaÃ§o cada slide ocupa dentro do trilho.
+      // flexBasis define quanto espaço cada slide ocupa dentro do trilho.
       slides.forEach((slide) => {
         slide.style.flexBasis = `${larguraDoSlide}%`;
       });
@@ -202,7 +202,7 @@ function configurarCarrosseis() {
       atualizarBolinhas();
     };
 
-    // direcao = 1 avanÃ§a. direcao = -1 volta.
+    // direcao = 1 avança. direcao = -1 volta.
     const irPara = (direcao) => {
       const indiceMaximo = pegarIndiceMaximo();
 
@@ -218,7 +218,7 @@ function configurarCarrosseis() {
     };
 
     const pararAutomatico = () => {
-      // clearInterval para uma repetiÃ§Ã£o automÃ¡tica iniciada por setInterval.
+      // clearInterval para uma repetição automática iniciada por setInterval.
       if (temporizador) window.clearInterval(temporizador);
       temporizador = null;
     };
@@ -227,7 +227,7 @@ function configurarCarrosseis() {
       if (carrossel.dataset.automatico !== "true") return;
 
       pararAutomatico();
-      // setInterval repete uma aÃ§Ã£o de tempos em tempos.
+      // setInterval repete uma ação de tempos em tempos.
       temporizador = window.setInterval(
         () => irPara(1),
         Number(carrossel.dataset.velocidade || 3000)
@@ -246,7 +246,7 @@ function configurarCarrosseis() {
       bolinhas.innerHTML = "";
 
       for (let i = 0; i <= pegarIndiceMaximo(); i += 1) {
-        // createElement cria um botÃ£o novo pelo JavaScript.
+        // createElement cria um botão novo pelo JavaScript.
         const bolinha = document.createElement("button");
         bolinha.type = "button";
         bolinha.setAttribute("aria-label", `Ir para item ${i + 1}`);
@@ -261,7 +261,7 @@ function configurarCarrosseis() {
       }
     }
 
-    // O ?. significa: sÃ³ adiciona o evento se o botÃ£o existir.
+    // O ?. significa: só adiciona o evento se o botão existir.
     botaoAnterior?.addEventListener("click", () => {
       irPara(-1);
       reiniciarAutomatico();
@@ -282,13 +282,13 @@ function configurarCarrosseis() {
   });
 }
 
-// Exibe a foto de cada integrante quando o arquivo correspondente estiver disponÃ­vel.
+// Exibe a foto de cada integrante quando o arquivo correspondente estiver disponível.
 function configurarFotosDaDiretoria() {
   document.querySelectorAll("[data-foto-diretoria]").forEach((foto) => {
     const caminhoDaFoto = foto.dataset.src;
     if (!caminhoDaFoto) return;
 
-    // Image cria uma imagem de teste na memÃ³ria antes de mostrar no site.
+    // Image cria uma imagem de teste na memória antes de mostrar no site.
     const testeDaImagem = new Image();
 
     // load acontece quando a imagem existe e carregou corretamente.
@@ -297,7 +297,7 @@ function configurarFotosDaDiretoria() {
       foto.hidden = false;
     });
 
-    // error acontece quando o arquivo nÃ£o existe ou falhou ao carregar.
+    // error acontece quando o arquivo não existe ou falhou ao carregar.
     testeDaImagem.addEventListener("error", () => {
       foto.hidden = true;
     });
@@ -306,13 +306,13 @@ function configurarFotosDaDiretoria() {
   });
 }
 
-// Carrega fotos dos eventos sÃ³ quando o arquivo existe; se nÃ£o existir, mantÃ©m "Imagem em breve".
+// Carrega fotos dos eventos só quando o arquivo existe; se não existir, mantém "Imagem em breve".
 function configurarFotosDosEventos() {
   document.querySelectorAll("[data-foto-evento]").forEach((foto) => {
     const caminhoDaFoto = foto.dataset.src;
     if (!caminhoDaFoto) return;
 
-    // Primeiro testa se a imagem existe. SÃ³ depois coloca a imagem na tela.
+    // Primeiro testa se a imagem existe. Só depois coloca a imagem na tela.
     const testeDaImagem = new Image();
 
     testeDaImagem.addEventListener("load", () => {
@@ -328,7 +328,7 @@ function configurarFotosDosEventos() {
   });
 }
 
-// Carrega logos de parceiros sÃ³ quando o arquivo existe; se nÃ£o existir, mantÃ©m a sigla.
+// Carrega logos de parceiros só quando o arquivo existe; se não existir, mantém a sigla.
 function configurarLogosDosParceiros() {
   document.querySelectorAll("[data-logo-parceiro]").forEach((logo) => {
     const caminhoDaLogo = logo.dataset.src;
@@ -345,7 +345,7 @@ function configurarLogosDosParceiros() {
   });
 }
 
-// Atualiza automaticamente o ano no rodapÃ©.
+// Atualiza automaticamente o ano no rodapé.
 function atualizarAnoDoRodape() {
   document.querySelectorAll("[data-year]").forEach((elemento) => {
     elemento.textContent = String(new Date().getFullYear());
@@ -354,8 +354,8 @@ function atualizarAnoDoRodape() {
 
 // Ponto de entrada: tudo abaixo roda depois que o HTML terminou de carregar.
 document.addEventListener("DOMContentLoaded", () => {
-  // DOMContentLoaded significa que o navegador jÃ¡ leu o HTML.
-  // Depois disso, o JavaScript consegue encontrar os elementos da pÃ¡gina.
+  // DOMContentLoaded significa que o navegador já leu o HTML.
+  // Depois disso, o JavaScript consegue encontrar os elementos da página.
   configurarMenuMobile();
   configurarRolagemSuave();
   configurarPerguntasFrequentes();

@@ -1,22 +1,22 @@
-﻿# Guia de estudo do projeto SOS Mulher
+# Guia de estudo do projeto SOS Mulher
 
-Este arquivo explica a funÃ§Ã£o das partes principais do site para ajudar o grupo a estudar, apresentar e fazer manutenÃ§Ã£o.
+Este arquivo explica a função das partes principais do site para ajudar o grupo a estudar, apresentar e fazer manutenção.
 
 ## Estrutura geral
 
-- `index.html`: pÃ¡gina principal do site. ReÃºne inÃ­cio, quem somos, diretoria, rede de apoio, parceiros, voluntariado, eventos, doaÃ§Ãµes, contato e perguntas frequentes.
-- `saude-bem-estar.html`: pÃ¡gina interna com temas de saÃºde fÃ­sica, saÃºde mental, autocuidado, sinais de atenÃ§Ã£o e rede de apoio.
-- `lei-maria-da-penha.html`: pÃ¡gina interna sobre direitos, tipos de violÃªncia, medidas protetivas e contatos de emergÃªncia.
-- `perguntas-frequentes.html`: pÃ¡gina interna com as perguntas frequentes abertas em uma pÃ¡gina prÃ³pria.
-- `obrigado.html`: pÃ¡gina preparada para confirmaÃ§Ã£o de envio do formulÃ¡rio quando o FormSubmit estiver com redirecionamento configurado.
-- `src/styles.css`: arquivo principal de estilos. Controla cores, tamanhos, espaÃ§amentos, responsividade, cards, carrossÃ©is, formulÃ¡rio e rodapÃ©.
-- `src/script.js`: arquivo de interaÃ§Ãµes. Controla menu mobile, rolagem suave, perguntas frequentes, carrossÃ©is, carregamento de imagens e ano do rodapÃ©.
-- `src/hero-template-claro-digital.css`: template alternativo do hero, salvo apenas como referÃªncia. Ele nÃ£o estÃ¡ conectado ao site.
+- `index.html`: página principal do site. Reúne início, quem somos, diretoria, rede de apoio, parceiros, voluntariado, eventos, doações, contato e perguntas frequentes.
+- `saude-bem-estar.html`: página interna com temas de saúde física, saúde mental, autocuidado, sinais de atenção e rede de apoio.
+- `lei-maria-da-penha.html`: página interna sobre direitos, tipos de violência, medidas protetivas e contatos de emergência.
+- `perguntas-frequentes.html`: página interna com as perguntas frequentes abertas em uma página própria.
+- `obrigado.html`: página preparada para confirmação de envio do formulário quando o FormSubmit estiver com redirecionamento configurado.
+- `src/styles.css`: arquivo principal de estilos. Controla cores, tamanhos, espaçamentos, responsividade, cards, carrosséis, formulário e rodapé.
+- `src/script.js`: arquivo de interações. Controla menu mobile, rolagem suave, perguntas frequentes, carrosséis, carregamento de imagens e ano do rodapé.
+- `src/hero-template-claro-digital.css`: template alternativo do hero, salvo apenas como referência. Ele não está conectado ao site.
 - `src/img/`: pasta com imagens usadas pelo site.
 
 ## Como o HTML funciona
 
-O HTML organiza o conteÃºdo em blocos chamados `section`. Cada seÃ§Ã£o tem uma classe para receber estilo do CSS e, em alguns casos, um `id` para ser acessada pelo menu.
+O HTML organiza o conteúdo em blocos chamados `section`. Cada seção tem uma classe para receber estilo do CSS e, em alguns casos, um `id` para ser acessada pelo menu.
 
 Exemplo:
 
@@ -26,18 +26,18 @@ Exemplo:
 
 - `section`: marca uma parte do site.
 - `class="secao fundo-azul-suave"`: conecta essa parte ao CSS.
-- `id="rede-apoio"`: permite que o menu vÃ¡ direto para essa parte com `href="#rede-apoio"`.
+- `id="rede-apoio"`: permite que o menu vá direto para essa parte com `href="#rede-apoio"`.
 
-## CabeÃ§alho e menu
+## Cabeçalho e menu
 
-O cabeÃ§alho fica no inÃ­cio das pÃ¡ginas e contÃ©m:
+O cabeçalho fica no início das páginas e contém:
 
 - Logo da ONG.
 - Nome SOS Mulher.
-- Links de navegaÃ§Ã£o.
-- BotÃ£o de menu para celular.
+- Links de navegação.
+- Botão de menu para celular.
 
-No computador, o menu aparece aberto na horizontal. No celular, o JavaScript usa o botÃ£o `.botao-menu` para abrir e fechar a navegaÃ§Ã£o.
+No computador, o menu aparece aberto na horizontal. No celular, o JavaScript usa o botão `.botao-menu` para abrir e fechar a navegação.
 
 ## Botão de emergência
 
@@ -45,23 +45,23 @@ O botão `.botao-emergencia-flutuante` aparece fixo no canto inferior direito da
 
 No CSS, `position: fixed` mantém o botão parado na tela mesmo quando a página rola. A animação `pulso-emergencia` cria um destaque visual discreto para mostrar que é uma ação importante.
 
-## PÃ¡gina principal
+## Página principal
 
-Na `index.html`, as principais seÃ§Ãµes sÃ£o:
+Na `index.html`, as principais seções são:
 
-- `inicio`: apresentaÃ§Ã£o principal do site, com chamada de acolhimento e botÃµes de aÃ§Ã£o.
-- `quem-somos`: explica a histÃ³ria, atuaÃ§Ã£o, trajetÃ³ria e diretoria.
-- `rede-apoio`: reÃºne telefones e serviÃ§os importantes.
+- `inicio`: apresentação principal do site, com chamada de acolhimento e botões de ação.
+- `quem-somos`: explica a história, atuação, trajetória e diretoria.
+- `rede-apoio`: reúne telefones e serviços importantes.
 - `seja-apoio`: mostra parceiros e chamada para novas parcerias.
-- seÃ§Ã£o de voluntariado: explica como participar.
-- `eventos`: mostra aÃ§Ãµes e fotos em carrossel.
+- seção de voluntariado: explica como participar.
+- `eventos`: mostra ações e fotos em carrossel.
 - `doacoes`: mostra formas de contribuir.
-- `contato`: mostra canais de atendimento e formulÃ¡rio.
-- `perguntas-frequentes`: dÃºvidas comuns sobre atendimento.
+- `contato`: mostra canais de atendimento e formulário.
+- `perguntas-frequentes`: dúvidas comuns sobre atendimento.
 
 ## CSS e cores
 
-O arquivo `src/styles.css` comeÃ§a com variÃ¡veis dentro de `:root`. Elas guardam cores, sombras e tamanhos usados no site inteiro.
+O arquivo `src/styles.css` começa com variáveis dentro de `:root`. Elas guardam cores, sombras e tamanhos usados no site inteiro.
 
 Exemplo:
 
@@ -71,51 +71,51 @@ Exemplo:
 --fundo-verde-suave: #f4faf7;
 ```
 
-Isso facilita a manutenÃ§Ã£o: se a cor principal mudar, basta alterar a variÃ¡vel.
+Isso facilita a manutenção: se a cor principal mudar, basta alterar a variável.
 
 As classes de fundo ajudam a intercalar as cores do site:
 
 - `.fundo-branco`: fundo branco.
 - `.fundo-suave`: fundo quase branco.
-- `.fundo-rosa-suave`: rosa claro ligado Ã  identidade da ONG.
-- `.fundo-azul-suave`: azul claro para confianÃ§a e orientaÃ§Ã£o.
+- `.fundo-rosa-suave`: rosa claro ligado à identidade da ONG.
+- `.fundo-azul-suave`: azul claro para confiança e orientação.
 - `.fundo-verde-suave`: verde claro para cuidado e bem-estar.
 
 ## JavaScript
 
-O arquivo `src/script.js` nÃ£o cria o conteÃºdo principal. Ele melhora a interaÃ§Ã£o do site.
+O arquivo `src/script.js` não cria o conteúdo principal. Ele melhora a interação do site.
 
-Principais funÃ§Ãµes:
+Principais funções:
 
 - `configurarMenuMobile()`: abre e fecha o menu no celular.
-- `configurarRolagemSuave()`: faz os links internos rolarem suavemente atÃ© a seÃ§Ã£o.
+- `configurarRolagemSuave()`: faz os links internos rolarem suavemente até a seção.
 - `configurarPerguntasFrequentes()`: abre e fecha respostas das perguntas frequentes.
-- `configurarCarrosseis()`: controla carrossÃ©is de parceiros e eventos.
-- `configurarFotosDaDiretoria()`: sÃ³ exibe a foto da diretoria se o arquivo existir.
-- `configurarFotosDosEventos()`: sÃ³ exibe a foto do evento se o arquivo existir; se nÃ£o existir, mantÃ©m â€œImagem em breveâ€.
-- `configurarLogosDosParceiros()`: sÃ³ exibe a logo do parceiro se o arquivo existir; se nÃ£o existir, mantÃ©m a sigla.
-- `atualizarAnoDoRodape()`: atualiza automaticamente o ano no rodapÃ©.
+- `configurarCarrosseis()`: controla carrosséis de parceiros e eventos.
+- `configurarFotosDaDiretoria()`: só exibe a foto da diretoria se o arquivo existir.
+- `configurarFotosDosEventos()`: só exibe a foto do evento se o arquivo existir; se não existir, mantém "Imagem em breve".
+- `configurarLogosDosParceiros()`: só exibe a logo do parceiro se o arquivo existir; se não existir, mantém a sigla.
+- `atualizarAnoDoRodape()`: atualiza automaticamente o ano no rodapé.
 
 Os ícones do site usam Bootstrap Icons. Eles aparecem direto no HTML por classes como `bi bi-telephone`, sem precisar de uma função no JavaScript para montar o ícone.
 
-## FormulÃ¡rio de contato
+## Formulário de contato
 
-O formulÃ¡rio usa FormSubmit:
+O formulário usa FormSubmit:
 
 ```html
 <form action="https://formsubmit.co/sosmulher.oficialsjc@gmail.com" method="POST">
 ```
 
-Isso envia a mensagem para o e-mail da ONG sem precisar de servidor prÃ³prio.
+Isso envia a mensagem para o e-mail da ONG sem precisar de servidor próprio.
 
 Campos ocultos usados:
 
 - `_subject`: define o assunto do e-mail.
 - `_template`: organiza o e-mail em formato de tabela.
-- `_captcha`: desativa o captcha padrÃ£o.
+- `_captcha`: desativa o captcha padrão.
 - `_honey`: campo escondido para ajudar contra spam.
 
-A pÃ¡gina `obrigado.html` jÃ¡ estÃ¡ pronta. Para usÃ¡-la depois de publicar o site, adicione no formulÃ¡rio o campo `_next` com o link completo:
+A página `obrigado.html` já está pronta. Para usá-la depois de publicar o site, adicione no formulário o campo `_next` com o link completo:
 
 ```html
 <input type="hidden" name="_next" value="https://seudominio.com/obrigado.html" />
@@ -127,26 +127,26 @@ As imagens principais ficam em `src/img/`.
 
 Arquivos importantes:
 
-- `logo.png`: logo pequena do cabeÃ§alho e rodapÃ©.
+- `logo.png`: logo pequena do cabeçalho e rodapé.
 - `logo-principal.png`: imagem principal do hero.
-- `Mulheres.png`: imagem usada na seÃ§Ã£o Quem Somos.
+- `Mulheres.png`: imagem usada na seção Quem somos.
 - `foto-beth-montezano.png`: foto da presidente.
 - `foto-ana-cristina.png`: foto da vice-presidenta.
 - `eventos/`: fotos do carrossel de eventos.
 - `parceiros/`: logos dos parceiros.
-- `qrcode-pix/qrcode-pix.svg`: QR Code usado na Ã¡rea de doaÃ§Ãµes.
-- `New folder/`: pasta mantida como referÃªncia de imagens salvas. Ela nÃ£o estÃ¡ conectada diretamente ao site.
+- `qrcode-pix/qrcode-pix.png`: QR Code usado na área de doações.
+- `New folder/`: pasta mantida como referência de imagens salvas. Ela não está conectada diretamente ao site.
 
 ## Template
 
 
-- `src/hero-template-claro-digital.css`, porque Ã© um template salvo como referÃªncia.
+- `src/hero-template-claro-digital.css`, porque é um template salvo como referência.
 
-## Pontos para conferir antes da apresentaÃ§Ã£o
+## Pontos para conferir antes da apresentação
 
-- Confirmar o nome do banco em DoaÃ§Ãµes, pois ainda aparece como dado pendente se nÃ£o for preenchido.
-- Testar o primeiro envio do FormSubmit, porque ele pode pedir confirmaÃ§Ã£o no e-mail da ONG.
+- Confirmar os dados bancários apenas se a ONG quiser publicá-los diretamente na página.
+- Testar o primeiro envio do FormSubmit, porque ele pode pedir confirmação no e-mail da ONG.
 - Conferir se todas as fotos e logos aparecem corretamente.
-- Testar no celular: menu, carrossel, formulÃ¡rio e rodapÃ©.
-- Confirmar se o link da pÃ¡gina `obrigado.html` serÃ¡ ativado depois da publicaÃ§Ã£o.
+- Testar no celular: menu, carrossel, formulário e rodapé.
+- Confirmar se o link da página `obrigado.html` será ativado depois da publicação.
 
