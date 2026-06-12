@@ -1,0 +1,53 @@
+SOS Mulher/
+├─ src/
+│  ├─ img/
+│  │  ├─ diretoria/
+│  │  │  ├─ foto-ana-cristina.png
+│  │  │  └─ foto-beth-montezano.png
+│  │  ├─ eventos/
+│  │  │  ├─ caminhada-laranja-05.jpeg
+│  │  │  ├─ curso-lions.2.jpeg
+│  │  │  ├─ curso-lions.jpeg
+│  │  │  ├─ curso-sebrae.jpeg
+│  │  │  ├─ curso-sebrae1.jpeg
+│  │  │  ├─ curso-sebrae2.jpeg
+│  │  │  ├─ encontro-formacao-01.jpeg
+│  │  │  ├─ entrega-certificado-01.jpeg
+│  │  │  ├─ evento.jpeg
+│  │  │  ├─ oficina-grupo-01.jpeg
+│  │  │  ├─ palestra-militares.jpeg
+│  │  │  ├─ palestra-sos.jpg
+│  │  │  ├─ palestra-sos2.jpeg
+│  │  │  ├─ palestra-sos3.jpeg
+│  │  │  ├─ palestra-sos4.jpeg
+│  │  │  ├─ projetos-editais-01.jpeg
+│  │  │  └─ visita-delegacia-01.jpeg
+│  │  ├─ New folder/
+│  │  │  ├─ foto-ana-cristina1.png
+│  │  │  ├─ sosmulher1.png
+│  │  │  ├─ sosmulherumtoque.png
+│  │  │  ├─ sosmulherv1.png
+│  │  │  └─ sosmulherv2.png
+│  │  ├─ parceiros/
+│  │  │  ├─ faculdade-vanguarda.png
+│  │  │  ├─ grupo-mulheres-do-brasil.png
+│  │  │  ├─ instituto-federal.png
+│  │  │  ├─ lions-club.png
+│  │  │  ├─ prefeitura-sao-jose.png
+│  │  │  ├─ sebrae-logo.png
+│  │  │  ├─ sorveteria-napoli.png
+│  │  │  └─ univap-logo.png
+│  │  ├─ qrcode-pix/
+│  │  │  ├─ qrcode-pix.png
+│  │  │  └─ qrcode-pix1.svg
+│  │  ├─ logo-principal.png
+│  │  ├─ logo.png
+│  │  └─ Mulheres.png
+│  ├─ script.js
+│  └─ styles.css
+├─ file_tree.txt
+├─ index.html
+├─ lei-maria-da-penha.html
+├─ obrigado.html
+├─ perguntas-frequentes.html
+└─ saude-bem-estar.html
